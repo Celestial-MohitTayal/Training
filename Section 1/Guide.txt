@@ -1,0 +1,5 @@
+<--------------------------HTML-------------------------->
+
+Q:  What is HTML?
+->  HyperText Markup Language:
+    used to structure content on a webpage 
