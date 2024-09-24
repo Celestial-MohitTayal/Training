@@ -1,0 +1,16 @@
+<------------------------Section 1---------------------------->
+24/9/24 to 26/9/24
+1. HTML and HTML5 Tags.
+2. Inline and block elements.
+3. CSS and CSS3.
+4. CSS positions and box model.
+5. Grid and flexbox model.
+6. id and class selectors and z-iindex.
+7. Pseudo classes and elements.
+8. CSS combinators and specificity.
+9. HTML and CSS Forms.
+10. Parallax, Carousels and scrolls.
+11. CSS Animations and hover effects.
+12. Use of HTML tags like (details, summary, meter, del, ins, abbr, progress, datalist)
+13. responsive application using bootstrap and media queries.
+14. versioning tool- Git
