@@ -1078,3 +1078,24 @@ Q:  What is HTML?
             .btn-secondary      grey
             .btn-light          white
             .btn-dark           black
+
+
+
+<---------------------------------------------Git/GitHub------------------------------------------------->
+
+        Git
+        git -v
+        git config --global user.name ""
+        git config --global user.email ""
+        git init
+        git add .
+        git commit -m ""
+        git push
+        git status
+        git log
+        git log --oneline
+        git show <add>
+        git revert <add>
+        git reset --hard <add>
+        git remote -v
+        git remote add <>
