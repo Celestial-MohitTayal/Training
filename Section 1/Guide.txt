@@ -1099,3 +1099,11 @@ Q:  What is HTML?
         git reset --hard <add>
         git remote -v
         git remote add <>
+        git branch
+        git branch <branch name>
+        git checkout <branch name>
+        git checkout -b "Branch name"
+        git merge origin/<branch name>
+        git rebase branch name
+
+        #https://www.youtube.com/watch?v=RDxQEzXN8AU
