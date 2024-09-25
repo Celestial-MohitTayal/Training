@@ -611,13 +611,470 @@ Q:  What is HTML?
 <-----------------------------------CSS Id, Class Selectors and z-index---------------------------------->
 
 
+        ids and class are defined by # and . in css.
 
-ids and class are defined by # and . in css.
+        class can be called multiple times.
+        id is called only once. id should be unique.
 
-class can be called multiple times.
-id is called only once. id should be unique.
+        z-index: auto/1/2/3/etc.;
 
-z-index: auto/1/2/3/etc.;
+        basically z-index is used to zoom in zoom out the object. it won't work on static position.
+        --------------------------------------------
 
-basically z-index is used to zoom in zoom out the object. it won't work on static position.
+        25/09/2024
+<-----------------------------------Pseudo Classes and Elements------------------------------------------>
 
+        A pseudo classes is used to define a sepcial state of an element.
+        example:    :visited, :link
+                    :hover, :active
+                    :firt-child
+                    :last-child
+                    :nth-child etc.
+
+        .btn:hover{
+            color: red;
+        }
+
+        ul li:first-child{
+        }
+
+        ul li:nth-child(4){
+        }
+
+
+        Pseudo elements is used to style specified parts of an element.
+        Example: ::first-letter, ::first-line, ::before, ::after
+
+        h2::first-letter{
+        }
+
+        ::selection{
+        }
+
+        p::first-line{
+        }
+
+
+<----------------------------------CSS combinators and specificity--------------------------------------->
+
+        Combinators =   explains the relationship between listed selectors.
+                          = descendant
+                        > = child
+                        ~ = general sibling
+                        + = adjacent sibling
+
+
+                        <div id="container">                                ->#container
+                            <p></p>                                         ->#container > p child
+                            <p></p>                                         ->#container > p
+                            <div>                                               
+                                <p></p>                                     ->#container grandchild           
+                            </div>
+                        </div>                                              ->
+
+                        <p></p>                                             ->#container + p
+                        <p></p>                                             ->#contaner ~ p
+
+        -------------------------------------------------
+
+        id is more  specific than class. Class is more  specific than element selector.
+
+        Combinators does not matter in casae of specificity. 
+
+        specifity could be changed by using !important. Specifity is like priority. we say this is more specific than this.
+
+
+<---------------------------------------HTML and CSS Form------------------------------------------------>
+
+        <div class="main>
+            <div class="register>
+                <h2>Register Here</h2>
+                <form id="register" method="post">
+                    <label>First Name</label>
+                    <br>
+                    <input type="text" name="fname" id="name" placeholder="Enter Your First Name">
+                    <br><br>
+                    <label>Last Name</label>
+                    <br>
+                    <input type="text" name="lname" id="name" placeholder="Enter Your Last Name">
+                    <br><br>
+                    <lable>Your age :</label>
+                    <br>
+                    <input type="number" name="age" id="name" placeholder="How old are you>"/>
+                    <br><br>
+                    <label>Email :</label>
+                    <br>
+                    <input type="email" name="email" id="name" placeholder="Enter your valid email"/>
+                    <br><br>
+                    <label>Gender</label>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender"id="male">
+                    &nbsp;
+                    <span id="male">Male</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" id="female"/>
+                    &nbsp;
+                    <span id="female">Female</span>
+                    <br><br>
+                    <label>Known Language : </lable>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="lang" id="hindi">
+                    &nbsp;
+                    <span id="hindi">Hindi</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="lang" id="urdu">
+                    &nbsp;
+                    <span id="urdu">Urdu</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="lang" id="eng">
+                    &nbsp;
+                    <span id="eng">English</span>
+                    <br><br>
+                    <input type="submit" value="submit" name="submit" id="submit"/>
+                </form>
+            </div>
+        </div>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: img;
+            background-size: 280%;
+            background-position: -400px 0px;
+        }
+
+        div.main{
+            width: 400px;
+            margin: 100px auto 0px 0px;
+        }
+
+        h2{
+            text-align: center;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        div.register{
+            background-color: rgba(0,0,0,0,.5);
+            width:100%;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        form#register{
+            margin: 40px;
+        }
+
+        label{
+            font-family: sans-serif;
+            font-size:18px;
+            font-style: italic;
+        }
+
+        input#name{
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        input#submit{
+            width: 200px;
+            padding: 7px;
+            font-size: 16px;
+            font-family: sans-serif;
+            font-weight: 600;
+            border: none;
+            border-radius: 3px;
+            background-color: rgba(250,100,0,0.8);
+            color: #fff;
+            curson: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        label,span,h2{
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+
+<---------------------------------Parallax, Carousels and Scrolls---------------------------------------->
+
+        I will perform this practically.
+
+        Translate
+        Transform
+        scroll-snap-type
+        scroll-behaviour
+        overflow-xyz
+        aspect-ratio
+        scroll-snap-align
+
+<---------------------------------CSS Animations and Hover Effect---------------------------------------->
+
+        Will do practically.
+
+
+
+<---------------------------------------------BootStrap-------------------------------------------------->
+        -->BOOTSTRAP is a library of CSS, it was intoduced by twitter in 2011
+        -->it is the first framework of html css javascript
+
+
+        library   - means 1 language
+        framework - means more than 1 language
+
+        ----> bootstrap is used to responsive webpage desgining.
+
+        the bootstrap divide all type of devices in 6 categories based on screen width
+           1. extra small devices - 1px to 576px window width
+           2. small devices - 576px to 768px window width
+           3.medium devices -768px to 992px window width
+           4.large devices -992px to 1200px window width
+           5.extra large devices -1200px to 1400px window width
+           6. double extra large devices - >1401pxwindow width
+
+         -----------------------------------------------
+
+          The bootstrap has given 12 classes for each category.
+          1. extra small devices
+              .col-1
+              .col-2
+              .col-3
+              .col-4
+              .col-5
+              .col-6
+              .col-7
+              .col-8
+              .col-9
+              .col-10
+              .col-11
+              .col-12
+          2. small devices
+              .col-sm-1
+              .col-sm-2
+              .col-sm-3
+              .col-sm-4
+              .col-sm-5
+              .col-sm-6
+              .col-sm-7
+              .col-sm-8
+              .col-sm-9
+              .col-sm-10
+              .col-sm-11
+              .col-sm-12
+
+          3. medium devices
+              .col-md-1
+              .col-md-2
+              .col-md-3
+              .col-md-4
+              .col-md-5
+              .col-md-6
+              .col-md-7
+              .col-md-8
+              .col-md-9
+              .col-md-10
+              .col-md-11
+              .col-md-12
+
+
+          4. large device
+              .col-lg-1
+              .col-lg-2
+              .col-lg-3
+              .col-lg-4
+              .col-lg-5
+              .col-lg-6
+              .col-lg-7
+              .col-lg-8
+              .col-lg-9
+              .col-lg-10
+              .col-lg-11
+              .col-lg-12
+
+          5. extra large devices
+              .col-xl-1
+              .col-xl-2
+              .col-xl-3
+              .col-xl-4
+              .col-xl-5
+              .col-xl-6
+              .col-xl-7
+              .col-xl-8
+              .col-xl-9
+              .col-xl-10
+              .col-xl-11
+              .col-xl-12
+
+          6.double extra large devices
+              .col-xxl-1
+              .col-xxl-2
+              .col-xxl-3
+              .col-xxl-4
+              .col-xxl-5
+              .col-xxl-6
+              .col-xxl-7
+              .col-xxl-8
+              .col-xxl-9
+              .col-xxl-10
+              .col-xxl-11
+              .col-xxl-12
+
+        *****Total 72 Classes*****
+
+        --------------------------------------------------
+           TO CREATE A WEBPAGE USING BOOTSTRAP FOLLOW THESE STEPS
+            1. LINK TO BOOTSTRRAP FILE IN HEAD SECTION.
+            2. USE BODY TAG .
+            3. INSIDE BODY OF HTML FOLLOW THESE classes:-
+                 .container -> it has margin from left and right
+                 .container-fluid -> it cover full width
+            4. INSIDE .CONTAINER OR CONTAINER-FLUID, FOLLOW THE classes
+               .row - height is auto, width is 100% of parent
+            5. INSIDE THE ROW FOLLOW THE COLUMNS-
+               ->each row can hold min 1 column and max 12 COLUMNS.
+
+        ----------------------------------------------------
+
+          html -> head(link to Bootstrap.css)
+               -> body->container->row->columns(72)->print the data
+
+
+        -----------------------------------------------------
+
+        Classes for margin ad padding (utility classes)
+            m - margin
+            p - padding
+            t - top
+            b - bottom
+            s - start (left)
+            e - end (right)
+
+            1 - 4px
+            2 - 8px
+            3 - 16px
+            4 - 24px
+            5 - 48px
+
+          Margin:
+            .m-1,.m-2,.m-3,.m-4,.m-5      -> Equal outer space from all the sides.
+            .mt-1,.mt-2,.mt-3,.mt-4,.mt-5 -> Outer Space from top.
+            .mb-1,.mb-2,.mb-3,.mb-4,.mb-5 -> Outer Space from bottom.
+            .ms-1,.ms-2,.ms-3,.ms-4,.ms-5 -> Outer Space from left.
+            .me-1,.me-2,.me-3,.me-4,.me-5 -> Outer Space from right.
+
+          Padding:
+            .p-1,.p-2,.p-3,.p-4,.p-5      -> Equal inner space from all the sides.
+            .pt-1,.pt-2,.pt-3,.pt-4,.pt-5 -> Inner Space from top.
+            .pb-1,.pb-2,.pb-3,.pb-4,.pb-5 -> Inner Space from bottom.
+            .ps-1,.ps-2,.ps-3,.ps-4,.ps-5 -> Inner Space from left.
+            .pe-1,.pe-2,.pe-3,.pe-4,.pe-5 -> Inner Space from right.
+
+        --------------------------------------------------------
+        Classes for text color
+            .text-danger         red
+            .text-success        green
+            .text-primary        blue
+            .text-info           skyblue
+            .text-warning        yellow
+            .text-secondary      grey
+            .text-white          white
+            .text-dark           black
+
+        ---------------------------------------------------------
+
+        Classes for background color
+            .bg-danger         red
+            .bg-success        green
+            .bg-primary        blue
+            .bg-info           skyblue
+            .bg-warning        yellow
+            .bg-secondary      grey
+            .bg-light          white
+            .bg-dark           black
+
+        ----------------------------------------------------------
+
+        Calsses for text allignment
+            .text-start    Left allignment
+            .text-end      Right allignment
+            .text-center   Center allignment
+
+        -----------------------------------------------------------
+
+        Classes for radius
+            .rounded
+            .rounded-circle
+
+        ------------------------------------------------------------
+
+        Classes for box-shadow
+            .shadow
+            .shadow-sm
+            .shadow-lg
+
+        ------------------------------------------------------------
+
+        Classes for img
+            .img-fluid - it control width of photo
+            .img-thumbnail
+
+        -------------------------------------------------------------
+
+        Classes for card
+            .card - Parent class
+            .card-header - Child
+            .card-body - Child
+            .card-footer - Child
+
+        --------------------------------------------------------------
+
+        Classes for left navigation
+            .list-group
+            .list-group-item
+            .active
+
+        ---------------------------------------------------------------
+
+        Classes for table
+            .table
+            .table-bordered
+            .table-striped
+            .table-sm
+
+        --------------------------------------------------------------
+
+        Classes for input element
+            .form-control - use in (text, password, textarea, email, number, date, file)
+            .form-select - use in select box
+
+        *****for different size*****
+
+            .form-control-sm
+            .form-control-lg
+
+        ---------------------------------------------------------------
+
+        Classes for button
+            .btn
+            .btn-danger         red
+            .btn-success        green
+            .btn-primary        blue
+            .btn-info           skyblue
+            .btn-warning        yellow
+            .btn-secondary      grey
+            .btn-light          white
+            .btn-dark           black
