@@ -16,7 +16,7 @@ body{
     margin: 65px auto;
 }
 
-.triangle{
+.roof{
     width: 0;
     height: 0;
     border-left: 230px solid blue;
@@ -26,7 +26,7 @@ body{
     position: relative;
 }
 
-.circle{
+.window{
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -37,7 +37,7 @@ body{
     position: absolute;
 }
 
-.rectangle{
+.body{
     height: 200px;
     width: 350px;
     border: 2px solid #fff;
@@ -46,7 +46,7 @@ body{
     position: relative;
 }
 
-.rectangle1{
+.door{
     width: 90px;
     height: 111px;
     background-color: #d7d07b;
@@ -55,7 +55,7 @@ body{
     left: 134px;
 }
 
-.circle1{
+.handle{
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -79,34 +79,34 @@ body{
         margin: 55px auto;
     }
     
-    .triangle{
+    .roof{
         border-left: 210px solid blue;
         border-right: 210px solid blue;
         border-bottom: 130px solid #d7d07b;
         margin: 65px auto;
     }
     
-    .circle{
+    .window{
         width: 60px;
         height: 60px;
         top: 35px;
         left: -31px;
     }
     
-    .rectangle{
+    .body{
         height: 180px;
         width: 300px;
         margin: -65px auto;
     }
     
-    .rectangle1{
+    .door{
         width: 85px;
         height: 101px;
         top: 79px;
         left: 107px;
     }
     
-    .circle1{
+    .handle{
         width: 10px;
         height: 10px;
         top: 49px;
@@ -127,7 +127,7 @@ body{
         margin: 55px auto;
     }
 
-    .triangle
+    .roof
         {
             border-left: 165px solid blue;
             border-right: 165px solid blue;
@@ -136,27 +136,27 @@ body{
         }
     
     
-    .circle{
+    .window{
         width: 45px;
         height: 45px;
         top: 36px;
         left: -24px;
     }
     
-    .rectangle{
+    .body{
         height: 150px;
         width: 244px;
         margin: -32px auto;
     }
     
-    .rectangle1{
+    .door{
         width: 70px;
         height: 85px;
         top: 65px;
         left: 88px;
     }
     
-    .circle1{
+    .handle{
         width: 8px;
         height: 8px;
         top: 41px;
