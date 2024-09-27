@@ -14,3 +14,18 @@
 12. Use of HTML tags like (details, summary, meter, del, ins, abbr, progress, datalist)
 13. responsive application using bootstrap and media queries.
 14. versioning tool- Git
+
+
+<------------------------Section 2---------------------------->
+27/9/24
+- JS Basic refresher (Data Types, loops, conditions, objects, classes)
+- [Advance data types] Maps / Sets
+- [JS Basic] Array / Object methods, string methods, prototype
+- [JS Basic] Hoisting / Closures.
+- [JS Basic] this keyword with object and new arrow fn
+- [JS Basic] Lexical environment / Execution stack
+- Callbacks / asyn-await
+- Promises
+- Event loop
+- pagination and lazy loading
+- local and session stroage
