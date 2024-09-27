@@ -28,4 +28,4 @@
 - Promises
 - Event loop
 - pagination and lazy loading
-- local and session stroage
+- local and session storage
