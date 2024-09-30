@@ -29,3 +29,9 @@
 - Event loop
 - pagination and lazy loading
 - local and session storage
+
+
+
+Removing git user in system 
+adding another user in system 
+multiple users in terminal
