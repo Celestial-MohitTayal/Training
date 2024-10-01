@@ -142,3 +142,38 @@ header {
     object-fit: contain;
     max-width: 100%;
 }
+
+.productContainer {
+    padding: 0.2rem;
+}
+
+.productContainer h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 750px;
+}
+
+.productList {
+    display: grid;
+    grid-template-columns: 450px 450px 450px;
+    grid-template-rows: 550px 550px;
+    row-gap: 30px;
+    column-gap: 30px;
+    justify-content: center;
+}
+
+.productList img {
+    width: 450px;
+    height: 550px;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+.productList img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1;
+}
