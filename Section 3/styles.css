@@ -161,8 +161,8 @@ header {
   display: grid;
   grid-template-columns: 435px 435px 435px;
   grid-template-rows: 520px 520px;
-  row-gap: 30px;
-  column-gap: 30px;
+  row-gap: 35px;
+  column-gap: 35px;
   justify-content: center;
 }
 
@@ -171,6 +171,8 @@ header {
   height: 520px;
   opacity: 0.75;
   transition: 0.5s;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .productList img:hover {
