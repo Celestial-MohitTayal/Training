@@ -145,6 +145,7 @@ header {
 
 .productContainer {
   padding: 0.2rem;
+  margin-bottom: 100px;
 }
 
 .productContainer h1 {
@@ -178,25 +179,141 @@ header {
   opacity: 1;
 }
 
-.parallaxContainer {
-  position: relative;
+.parallax {
+  background-image: url('Images/Parallax.png');
+  height: 450px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.parallaxContainer label {
+.content {
+  padding: 100px 50px;
+  height: 450px;
+}
+
+.content label {
   font-family: "Montserrat", sans-serif;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: 500;
   color: #fff;
-  position: absolute;
+}
+.content .spclofr {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
 }
 
-.parallaxContainer p {
+.content p {
   font-family: "Montserrat", sans-serif;
   color: #fff;
-  font-weight: 200;
-
-  position: absolute;
+  padding: 10px 0;
 }
 
-.parallaxContainer button {
-  position: absolute;
+.content button {
+  border: none;
+  padding: 5px 25px;
+  color: black;
+  background-color: #fff;
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+.services {
+  /* height: 300px; */
+  display: grid;
+  grid-template-columns: 350px 350px 350px 350px;
+  justify-content: space-around;
+  padding: 50px 120px;
+}
+
+.banner {
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 50px 10px;
+}
+
+.banner i {
+  color: rgb(45, 43, 43);
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+.banner label {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(45, 43, 43);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.banner p {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(45, 43, 43);
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 400px 200px 200px 400px;
+  column-gap: 80px;
+  background-color: rgb(79, 82, 84);
+  /* height: 300px; */
+  padding: 50px 200px;
+}
+.Flogo {
+  cursor: pointer;
+}
+
+.Flogo p {
+  color: #c8c5c5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.List {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.List h3 {
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+.List p {
+  font-size: 15px;
+  padding-bottom: 5px;
+  font-weight: 100;
+}
+
+.subscribe h3 {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 20px;
+  font-size: 25px;
+}
+
+.subscribe input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px 5px 5px;
+  margin-bottom: 5px;
+}
+
+.subscribe button {
+  border: none;
+  background-color: #fff;
+  color: black;
+  padding: 5px 20px;
+  border-radius: 5px;
+  /* margin-left: 30px; */
 }
