@@ -64,11 +64,11 @@ header {
 }
 
 .active {
-    background-color: black;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-  }
+  background-color: black;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+}
 
 .searchBox {
   margin-left: 20px;
@@ -99,81 +99,104 @@ header {
 }
 
 .frontText {
-    margin-top: 275px;
-    margin-left: 100px;
+  margin-top: 275px;
+  margin-left: 100px;
 }
 
 .frontText p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 54px;
-    font-weight: 600;
-    color: #edf0f1;
-    text-shadow: 1px 1px 2px black;
-    letter-spacing: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 54px;
+  font-weight: 600;
+  color: #edf0f1;
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: 4px;
 }
 
 .frontText button {
-    background-color: #fff;
-    font-size: 20px;
-    margin: 20px 0px;
-    padding: 10px 30px;
-    color: black;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+  background-color: #fff;
+  font-size: 20px;
+  margin: 20px 0px;
+  padding: 10px 30px;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .sliderWrapper {
-    position: relative;
-    padding: 0.2rem;
+  position: relative;
+  padding: 0.2rem;
 }
 
 .slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
 }
 
 .slider img {
-    flex: 1 0 100%;
-    scroll-snap-align: start;
-    object-fit: contain;
-    max-width: 100%;
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 .productContainer {
-    padding: 0.2rem;
+  padding: 0.2rem;
 }
 
-.productContainer h1{
-    font-family: "Montserrat", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-left: 750px;
+.productContainer h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 775px;
 }
 
 .productList {
-    display: grid;
-    grid-template-columns: 450px 450px 450px;
-    grid-template-rows: 550px 550px;
-    row-gap: 30px;
-    column-gap: 30px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: 435px 435px 435px;
+  grid-template-rows: 520px 520px;
+  row-gap: 30px;
+  column-gap: 30px;
+  justify-content: center;
 }
 
 .productList img {
-    width: 450px;
-    height: 550px;
-    opacity: 0.75;
-    transition: 0.5s;
+  width: 435px;
+  height: 520px;
+  opacity: 0.75;
+  transition: 0.5s;
 }
 
 .productList img:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.parallaxContainer {
+  position: relative;
+}
+
+.parallaxContainer label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+}
+
+.parallaxContainer p {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 200;
+
+  position: absolute;
+}
+
+.parallaxContainer button {
+  position: absolute;
 }
