@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
 }
-@media all and (max-width: 1200px) {
+
 .frontFace {
   /* position: relative; */
   background: url("Images/Front.jpg");
@@ -229,7 +229,8 @@ header {
 
 .services {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: none;
   justify-content: center;
   padding: 50px 120px;
   /* position: relative; */
@@ -271,7 +272,8 @@ header {
 
 .footer {
   display: grid;
-  /* grid-template-columns: 2fr 1fr 1fr 2fr; */
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: none;
   column-gap: 80px;
   background-color: rgb(79, 82, 84);
   /* height: 300px; */
@@ -329,35 +331,37 @@ header {
   /* margin-left: 30px; */
 }
 
-}
 
 /* ----------------------------------------------------------------------------------- */
 
-@media all and (max-width: 780px) {
+@media (max-width: 780px) {
 
   .services {
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: none;
   }
 
   .footer {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    row-gap: 50px;
+    grid-template-columns: none;
+    row-gap: 80px;
     padding: 50px 100px; 
   }
-}
 
 /* ---------------------------------------------------------------------------------------- */
 
-@media all and (max-width: 480px) {
+@media (max-width: 480px) {
 
   .services {
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: none;
   }
 
   .footer {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: none;
     row-gap: 80px;
     padding: 50px 100px; 
   }
