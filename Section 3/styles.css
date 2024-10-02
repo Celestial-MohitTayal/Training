@@ -4,15 +4,15 @@
   margin: 0;
   padding: 0;
 }
-
+@media all and (max-width: 1200px) {
 .frontFace {
-  position: relative;
+  /* position: relative; */
   background: url("Images/Front.jpg");
-  min-height: 800px;
+  height: 800px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  /* position: relative; */
   opacity: 0.95;
 }
 
@@ -33,14 +33,14 @@ header {
   padding: 10px 5%;
   background-color: rgb(79, 82, 84);
   opacity: 0.95;
-  position: sticky;
+  /* position: sticky; */
 }
 
 .logo {
   cursor: pointer;
   margin-right: auto;
-  width: 210px;
-  height: 54px;
+  max-width: 210px;
+  min-height: 54px;
 }
 
 .nav__links {
@@ -94,7 +94,7 @@ header {
 }
 
 .searchBox i:hover {
-  color: #edf0f1;
+  color: #999a9b;
   cursor: pointer;
 }
 
@@ -144,8 +144,9 @@ header {
 }
 
 .productContainer {
-  padding: 0.2rem;
-  margin-bottom: 100px;
+  padding: 5% 5%;
+  /* padding: 0.2rem;
+  margin-bottom: 100px; */
 }
 
 .productContainer h1 {
@@ -154,21 +155,21 @@ header {
   font-weight: 400;
   margin-top: 50px;
   margin-bottom: 20px;
-  margin-left: 775px;
+  text-align: center;
 }
 
 .productList {
   display: grid;
-  grid-template-columns: 435px 435px 435px;
-  grid-template-rows: 520px 520px;
-  row-gap: 35px;
-  column-gap: 35px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 4%;
+  column-gap: 4%;
   justify-content: center;
 }
 
 .productList img {
-  width: 435px;
-  height: 520px;
+  width: 100%;
+  height: 100%;
   opacity: 0.75;
   transition: 0.5s;
   border-radius: 20px;
@@ -222,22 +223,29 @@ header {
   font-family: "Courier New", Courier, monospace;
 }
 
+.serviceC {
+  padding: 5% 5%;
+}
 
 .services {
-  /* height: 300px; */
   display: grid;
-  grid-template-columns: 350px 350px 350px 350px;
-  justify-content: space-around;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  justify-content: center;
   padding: 50px 120px;
+  /* position: relative; */
 }
 
 .banner {
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  /* align-items: center; */
+  /* align-content: center; */
   text-align: center;
   padding: 50px 10px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px 20px;
+  border-radius: 20px;
+  /* position: inherit; */
 }
 
 .banner i {
@@ -263,12 +271,13 @@ header {
 
 .footer {
   display: grid;
-  grid-template-columns: 400px 200px 200px 400px;
+  /* grid-template-columns: 2fr 1fr 1fr 2fr; */
   column-gap: 80px;
   background-color: rgb(79, 82, 84);
   /* height: 300px; */
   padding: 50px 200px;
 }
+
 .Flogo {
   cursor: pointer;
 }
@@ -318,4 +327,38 @@ header {
   padding: 5px 20px;
   border-radius: 5px;
   /* margin-left: 30px; */
+}
+
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+@media all and (max-width: 780px) {
+
+  .services {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 50px;
+    padding: 50px 100px; 
+  }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
+@media all and (max-width: 480px) {
+
+  .services {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 80px;
+    padding: 50px 100px; 
+  }
 }
