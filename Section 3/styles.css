@@ -7,8 +7,8 @@
 
 .frontFace {
   background: url("Images/Front.jpg");
-  height: 400px;
-  background-position: center; 
+  height: 700px;
+  background-position: center top; 
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.95;
@@ -316,6 +316,10 @@ a.active, .nav__links li a:hover {
     font-size: 14px;
   }
 
+  .frontFace {
+    height: 620px;
+  }
+
   .logo {
     max-width: 190px;
     min-height: 52px;
@@ -337,6 +341,10 @@ a.active, .nav__links li a:hover {
   a,
   button {
     font-size: 12px;
+  }
+  
+  .frontFace {
+    height: 520px;
   }
 
   .logo {
@@ -396,6 +404,10 @@ a.active, .nav__links li a:hover {
 @media (max-width: 735px) {
   header {
     display: block;
+  }
+
+  .frontFace {
+    height: 420px;
   }
 
   .nav__links li {
