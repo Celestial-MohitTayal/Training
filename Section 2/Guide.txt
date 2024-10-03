@@ -1191,4 +1191,4 @@
             Local Storage and Session Storage are useful for storing data in the browser, with local storage being persistent and session storage being temporary.
             Both are easy to use and can enhance the user experience by preserving state and preferences.      
 
-<------------------------------------------------------------------------------------------------------------>              
+<------------------------------------------------------------------------------------------------------------>               
