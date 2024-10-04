@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.frontText {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+
+.frontFace {
+    position: relative;
+}
+
+.parallax-header {
+    background: url(Images/Parallax.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

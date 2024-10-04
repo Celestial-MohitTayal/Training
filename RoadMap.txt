@@ -35,3 +35,12 @@
 Removing git user in system 
 adding another user in system 
 multiple users in terminal
+
+
+<--------------------------Section3--------------------->
+
+Making a responsive template using HTML and CSS.
+
+https://celestialsystem-my.sharepoint.com/:v:/g/personal/baibhav_s_celestialsys_com/Eb4kG-3nSV1CjxTbij82vSwBmqflGgEOWj4TWz-gE4sHxA?e=XJRmtl
+
+
