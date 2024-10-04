@@ -5,7 +5,7 @@
 // are
 // you
 // today?
-// empty arary
+// empty array
 
 function mutate(arr) {
   let n = arr.length;
@@ -55,3 +55,5 @@ reverseWords("How are you today?");
 
 //-----------------------------------------------------
 
+// input: 'arr= [1,2,3,[4,5,[6,7],8,9],10,11]'
+// output: 'arr=[1,2,3,4,5,6,7,8,9,10,11]'
