@@ -52,21 +52,18 @@ function reverseWords(str) {
 
 reverseWords("How are you today?");
 
-
 //-----------------------------------------------------
 
 // input: 'arr= [1,2,3,[4,5,[6,7],8,9],10,11]'
 // output: 'arr=[1,2,3,4,5,6,7,8,9,10,11]'
 
-
-
 function reduceArray(arr) {
   let resArr = [];
 
-  for(const item of arr){
-    if(Array.isArray(item)){
+  for (const item of arr) {
+    if (Array.isArray(item)) {
       resArr = resArr.concat(reduceArray(item));
-    } else{
+    } else {
       resArr.push(item);
     }
   }
@@ -76,4 +73,3 @@ function reduceArray(arr) {
 let array = [1, 2, 3, [4, 5, [6, 7], 8, 9], 10, 11];
 let output1 = reduceArray(array);
 console.log(output1);
-
