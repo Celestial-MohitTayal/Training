@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 20px 10% 20px;
+      text-align: center;
+    }
+
+    #container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      font-size: 30px;
+      color: blue;
+    }
+  </style>
+  <script>
+
+    class ShopOwner {
+      constructor() {
+        this.fullName = "Alex";
+        this.mobileNo = 9999999999;
+        this.city = "Bangalore";
+        this.age = "30 Years";
+        this.pincode = 560037;
+      }
+    }
+
+
+    class Shop extends ShopOwner {                               //inheriting the child class to parent class
+      constructor() {
+        super();                                                 // Constructor of Parent Class
+        this.itemList = ["Rice", "Sugar", "Potato", "Onion"]
+      }
+
+      printData = (data) => {
+        document.getElementById("container").innerHTML = data;
+      }
+
+      getItem = () => {
+        let data = "";
+        this.itemList.map((itemName, index) => {
+          data = data + "<p>" + itemName + "<br/> <button onclick='obj1.delete(" + index + ")'> Delete </button> </p>";
+        })
+        this.printData(data);
+
+        let temp = "<h3> Shop Owner Details: </h3>";
+        temp = temp + "<p> Name: " + this.fullName + "</p>";
+        temp = temp + "<p> Mobile No: " + this.mobileNo + "</p>";
+        temp = temp + "<p> City: " + this.city + "</p>";
+        temp = temp + "<p> Age: " + this.age + "</p>";
+        temp = temp + "<p> Pincode: " + this.pincode + "</p>";
+        document.getElementById("owner").innerHTML = temp;
+      }
+
+      save = () => {
+        let itemName = document.getElementById("newItem").value.trim(); // Trim() will remove space from left and right of input
+        if (itemName != "") {
+          this.itemList.unshift(itemName);
+          document.getElementById("newItem").value = "";
+          this.getItem();  // To reload the list
+        }
+        else {
+          alert("Invalid Item Name..!!");
+        }
+      }
+
+
+      delete = (index) => {
+        this.itemList.splice(index, 1);
+        this.getItem();
+      }
+
+      edit = () => {
+        this.fullName = prompt("Enter Owner Full Name");
+        this.mobileNo = prompt("Owner Mobile No.");
+        this.age = prompt("Enter Age");
+        this.getItem();
+      }
+    }
+
+    const obj1 = new Shop();
+
+  </script>
+</head>
+
+<body onload="obj1.getItem()">
+  <h1> Class Object in JavaScript - Add, List, Delete </h1>
+  <p>
+    Enter New Item Name: <input type="text" id="newItem" />
+    <button onclick="obj1.save()"> Save </button>
+  </p>
+  <section id="container"></section>
+  <section id="owner"></section>
+  <button onclick="obj1.edit()"> Edit Info </button>
+</body>
+
+</html>
