@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="flex flex-row h-screen w-screen">
+      <!-- Display Container -->
+      <div id="container" class="w-9/12"></div>
+
+      <!-- NavBar Right -->
+      <div class="flex flex-col space-y-10 p-10 items-center">
+        <div class="flex flex-col space-y-2">
+          <h2 class="font-mono font-bold">Views</h2>
+            <button
+              type="button"
+              class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              onclick="desktop()"
+              >
+              Desktop
+            </button>
+
+            <button
+              type="button"
+              class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              onclick="tablet()"  
+              >
+              Tablet
+            </button>
+
+            <button
+              type="button"
+              class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              onclick="mobile()"  
+              >
+              Mobile
+            </button>
+        </div>
+        <div class="flex flex-row space-y-2 pl-10">
+          <button
+            class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
+          >
+            Reset
+          </button>
+          <label class="font-semibold font-mono">or esc</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
