@@ -1,0 +1,3 @@
+To check multiple ids in one tag.
+designing the table for count.
+to convert the tailwind cdn to tailwind cli.
