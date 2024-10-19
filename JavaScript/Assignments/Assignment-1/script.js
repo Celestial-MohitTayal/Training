@@ -353,14 +353,18 @@ const mobile = () => {
 let keysPressed = {};
 
 const textAreaDown = event => {
-  console.log(event);
+  //   console.log(event);
+
   let { key } = event;
+
   if (keysPressed[key]) {
     keysPressed[key] += 1;
   } else {
     keysPressed[key] = 1;
   }
+
   console.log(key);
+
   document.getElementById(key).style.backgroundColor = 'red';
   setTimeout(() => {
     document.getElementById(key).style.backgroundColor = 'white';
@@ -369,7 +373,6 @@ const textAreaDown = event => {
   document.getElementById('result').innerHTML = JSON.stringify(keysPressed);
 };
 
-
 const reset = () => {
-    document.getElementById("text-area").value = ""
-}
+  document.getElementById('text-area').value = '';
+};
