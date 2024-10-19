@@ -18,7 +18,7 @@ const desktop = () => {
       <div class="flex flex-col w-full space-y-1 p-4 bg-slate-100">
         <!-- Row-1 -->
         <div class="flex flex-row space-x-2">
-          <div id="escape" class="w-14 text-center bg-white shadow-lg rounded">esc</div>
+          <div id="ESCAPE" class="w-14 text-center bg-white shadow-lg rounded">esc</div>
           <div id="F1" class="w-11 text-center bg-white shadow-lg rounded">F1</div>
           <div id="F2" class="w-11 text-center bg-white shadow-lg rounded">F2</div>
           <div id="F3" class="w-11 text-center bg-white shadow-lg rounded">F3</div>
@@ -34,7 +34,7 @@ const desktop = () => {
         </div>
         <!-- Row-2 -->
         <div class="flex flex-row space-x-2">
-          <div id="back-tick" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="~" class="w-10 text-sm bg-white text-center shadow-lg rounded">
             ~
           </div>
           <div id="1" class="w-10 text-sm bg-white text-center shadow-lg rounded">
@@ -72,25 +72,25 @@ const desktop = () => {
             ( <br />
             9
           </div>
-          <div id="10" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="0" class="w-10 text-sm bg-white text-center shadow-lg rounded">
             ) <br />
-            10
+            0
           </div>
-          <div id="dash" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="-" class="w-10 text-sm bg-white text-center shadow-lg rounded">
             _ <br />
             -
           </div>
-          <div id="equal" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="=" class="w-10 text-sm bg-white text-center shadow-lg rounded">
             + <br />
             =
           </div>
-          <div id="back-space" class="w-14 text-center text-sm bg-white shadow-lg rounded">
+          <div id="BACKSPACE" class="w-14 text-center text-sm bg-white shadow-lg rounded">
             back space
           </div>
         </div>
         <!-- Row-3 -->
         <div class="flex flex-row space-x-2">
-          <div id="tab" class="w-14 bg-white text-center shadow-lg rounded">tab</div>
+          <div id="TAB" class="w-14 bg-white text-center shadow-lg rounded">tab</div>
           <div id="Q" class="w-10 bg-white text-center shadow-lg rounded">Q</div>
           <div id="W" class="w-10 bg-white text-center shadow-lg rounded">W</div>
           <div id="E" class="w-10 bg-white text-center shadow-lg rounded">E</div>
@@ -101,22 +101,22 @@ const desktop = () => {
           <div id="I" class="w-10 bg-white text-center shadow-lg rounded">I</div>
           <div id="O" class="w-10 bg-white text-center shadow-lg rounded">O</div>
           <div id="P" class="w-10 bg-white text-center shadow-lg rounded">P</div>
-          <div id="bracket1" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="[" class="w-10 text-xs bg-white text-center shadow-lg rounded">
             { <br />
             [
           </div>
-          <div id="bracket2" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="]" class="w-10 text-xs bg-white text-center shadow-lg rounded">
             } <br />
             ]
           </div>
-          <div id="or-sign" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="" class="w-10 text-xs bg-white text-center shadow-lg rounded">
             | <br />
             \
           </div>
         </div>
         <!-- Row-4 -->
         <div class="flex flex-row space-x-2">
-          <div id="caps" class="w-20 bg-white text-center shadow-lg rounded">
+          <div id="CAPSLOCK" class="w-20 bg-white text-center shadow-lg rounded">
             caps lock
           </div>
           <div id="A" class="w-10 bg-white text-center shadow-lg rounded">A</div>
@@ -128,19 +128,19 @@ const desktop = () => {
           <div id="J" class="w-10 bg-white text-center shadow-lg rounded">J</div>
           <div id="K" class="w-10 bg-white text-center shadow-lg rounded">K</div>
           <div id="L" class="w-10 bg-white text-center shadow-lg rounded">L</div>
-          <div id="colon" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id=";" class="w-10 text-xs bg-white text-center shadow-lg rounded">
             : <br />
             ;
           </div>
-          <div id="inerted-comma" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="'" class="w-10 text-xs bg-white text-center shadow-lg rounded">
             " <br />
             '
           </div>
-          <div id="Enter" class="w-16 text-center bg-white shadow-lg rounded">enter</div>
+          <div id="ENTER" class="w-16 text-center bg-white shadow-lg rounded">enter</div>
         </div>
         <!-- Row-5 -->
         <div class="flex flex-row space-x-2">
-          <div id="shift-l" class="w-24 bg-white text-center shadow-lg rounded-md">
+          <div id="SHIFT" class="w-24 bg-white text-center shadow-lg rounded-md">
             shift
           </div>
           <div id="Z" class="w-10 bg-white text-center shadow-lg rounded">Z</div>
@@ -150,31 +150,31 @@ const desktop = () => {
           <div id="B" class="w-10 bg-white text-center shadow-lg rounded">B</div>
           <div id="N" class="w-10 bg-white text-center shadow-lg rounded">N</div>
           <div id="M" class="w-10 bg-white text-center shadow-lg rounded">M</div>
-          <div id="comma" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="," class="w-10 text-xs bg-white text-center shadow-lg rounded">
             < <br />
             ,
           </div>
-          <div id="dot" class="w-10 text-xs bg-white text-center shadow-xl rounded">
+          <div id="." class="w-10 text-xs bg-white text-center shadow-xl rounded">
             > <br />
             .
           </div>
-          <div id="slash" class="w-10 text-xs bg-white text-center shadow-xl rounded">
+          <div id="/" class="w-10 text-xs bg-white text-center shadow-xl rounded">
             " <br />
             /
           </div>
-          <div id="shift-r" class="w-24 bg-white text-center shadow-xl rounded">shift</div>
+          <div id="SHIFT" class="w-24 bg-white text-center shadow-xl rounded">shift</div>
         </div>
         <!-- Row-6 -->
         <div class="flex flex-row space-x-2">
-          <div id="ctrl-l" class="w-16 h-8 bg-white text-center shadow-xl rounded">
+          <div id="CONTROL" class="w-16 h-8 bg-white text-center shadow-xl rounded">
             ctrl
           </div>
-          <div id="win-l" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
-          <div id="alt-l" class="w-14 h-8 bg-white text-center shadow-xl rounded">alt</div>
-          <div id="Space" class="w-72 h-8 bg-white text-center shadow-xl rounded"></div>
-          <div id="alt-r" class="w-12 h-8 bg-white text-center shadow-xl rounded">alt</div>
-          <div id="win-r" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
-          <div id="ctrl-r" class="w-16 h-8 bg-white text-center shadow-xl rounded">
+          <div id="META" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
+          <div id="ALT" class="w-14 h-8 bg-white text-center shadow-xl rounded">alt</div>
+          <div id=" " class="w-72 h-8 bg-white text-center shadow-xl rounded"></div>
+          <div id="ALT" class="w-12 h-8 bg-white text-center shadow-xl rounded">alt</div>
+          <div id="META" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
+          <div id="CONTROL" class="w-16 h-8 bg-white text-center shadow-xl rounded">
             ctrl
           </div>
         </div>
@@ -242,7 +242,7 @@ const tablet = () => {
             </div>
             <div class="flex flex-row space-x-2 justify-center">
     
-                <div id="arror" class="w-7 text-sm bg-white text-center shadow-md rounded">^</div>
+                <div id="CAPSLOCK" class="w-7 text-sm bg-white text-center shadow-md rounded">^</div>
                 <div id="Z" class="w-7 text-sm bg-white text-center shadow-md rounded">Z</div>
                 <div id="X" class="w-7 text-sm bg-white text-center shadow-md rounded">X</div>
                 <div id="C" class="w-7 text-sm bg-white text-center shadow-md rounded">C</div>
@@ -250,13 +250,13 @@ const tablet = () => {
                 <div id="B" class="w-7 text-sm bg-white text-center shadow-md rounded">B</div>
                 <div id="N" class="w-7 text-sm bg-white text-center shadow-md rounded">N</div>
                 <div id="M" class="w-7 text-sm bg-white text-center shadow-md rounded">M</div>
-                <div id="comma" class="w-7 text-sm bg-white text-center shadow-md rounded">,</div>
-                <div id="dot" class="w-7 text-sm bg-white text-center shadow-md rounded">.</div>
+                <div id="." class="w-7 text-sm bg-white text-center shadow-md rounded">.</div>
+                <div id="BACKSPACE" class="w-7 text-sm bg-white text-center shadow-md rounded"><-</div>
             </div>
             <div class="flex flex-row space-x-2 justify-center">
                 <div id="num" class="w-12 text-sm bg-white text-center shadow-md rounded">123</div>
-                <div id="Space" class="w-40 text-sm bg-white text-center shadow-md rounded"></div>
-                <div id="Enter" class="w-16 text-sm bg-white text-center shadow-md rounded">ENTER</div>
+                <div id=" " class="w-40 text-sm bg-white text-center shadow-md rounded"></div>
+                <div id="ENTER" class="w-16 text-sm bg-white text-center shadow-md rounded">ENTER</div>
             </div>
         </div>
       </div>
@@ -326,7 +326,7 @@ const mobile = () => {
             </div>
             <div class="flex flex-row space-x-1 justify-center">
     
-                <div id="arrow" class="w-7 text-sm bg-white text-center shadow-md rounded">^</div>
+                <div id="CAPSLOCK" class="w-7 text-sm bg-white text-center shadow-md rounded">^</div>
                 <div id="Z" class="w-7 text-sm bg-white text-center shadow-md rounded">Z</div>
                 <div id="X" class="w-7 text-sm bg-white text-center shadow-md rounded">X</div>
                 <div id="C" class="w-7 text-sm bg-white text-center shadow-md rounded">C</div>
@@ -334,13 +334,13 @@ const mobile = () => {
                 <div id="B" class="w-7 text-sm bg-white text-center shadow-md rounded">B</div>
                 <div id="N" class="w-7 text-sm bg-white text-center shadow-md rounded">N</div>
                 <div id="M" class="w-7 text-sm bg-white text-center shadow-md rounded">M</div>
-                <div id="comma" class="w-7 text-sm bg-white text-center shadow-md rounded">,</div>
-                <div id="dot" class="w-7 text-sm bg-white text-center shadow-md rounded">.</div>
+                <div id="." class="w-7 text-sm bg-white text-center shadow-md rounded">.</div>
+                <div id="BACKSPACE" class="w-7 text-sm bg-white text-center shadow-md rounded"><-</div>
             </div>
             <div class="flex flex-row space-x-1 justify-center">
                 <div id="num" class="w-10 text-sm bg-white text-center shadow-md rounded">123</div>
-                <div id="Space" class="w-28 text-sm bg-white text-center shadow-md rounded"></div>
-                <div id="Enter" class="w-14 text-xs bg-white text-center shadow-md rounded">ENTER</div>
+                <div id=" " class="w-28 text-sm bg-white text-center shadow-md rounded"></div>
+                <div id="ENTER" class="w-14 text-xs bg-white text-center shadow-md rounded">ENTER</div>
             </div>
         </div>
       </div>
@@ -363,11 +363,11 @@ const textAreaDown = event => {
     keysPressed[key] = 1;
   }
 
-  console.log(key);
+  console.log(key.toUpperCase());
 
-  document.getElementById(key).style.backgroundColor = 'red';
+  document.getElementById(key.toUpperCase()).style.backgroundColor = 'red';
   setTimeout(() => {
-    document.getElementById(key).style.backgroundColor = 'white';
+    document.getElementById(key.toUpperCase()).style.backgroundColor = 'white';
   }, 200);
 
   document.getElementById('result').innerHTML = JSON.stringify(keysPressed);
