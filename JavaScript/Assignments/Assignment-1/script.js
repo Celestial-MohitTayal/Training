@@ -12,7 +12,7 @@ const desktop = () => {
         </p>
       </div>
       <!-- TextArea -->
-          <textarea id="text-area" class="p-4 w-11/12 h-56 bg-white border-none focus:border-none" onkeydown = "textAreaDown(event)" >Text Area</textarea>
+          <textarea  autofocus id="text-area" class="p-4 w-11/12 h-56 bg-white border-none outline-none" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
       <!-- Keyboard -->
       <!-- Flex-Col Container -->
       <div class="flex flex-col w-full space-y-1 p-4 bg-slate-100">
@@ -140,7 +140,7 @@ const desktop = () => {
         </div>
         <!-- Row-5 -->
         <div class="flex flex-row space-x-2">
-          <div id="SHIFT" class="w-24 bg-white text-center shadow-lg rounded-md">
+          <div id="SHIFTLEFT" class="w-24 bg-white text-center shadow-lg rounded-md">
             shift
           </div>
           <div id="Z" class="w-10 bg-white text-center shadow-lg rounded">Z</div>
@@ -162,7 +162,7 @@ const desktop = () => {
             " <br />
             /
           </div>
-          <div id="SHIFT" class="w-24 bg-white text-center shadow-xl rounded">shift</div>
+          <div id="SHIFTRIGHT" class="w-24 bg-white text-center shadow-xl rounded">shift</div>
         </div>
         <!-- Row-6 -->
         <div class="flex flex-row space-x-2">
@@ -202,7 +202,7 @@ const tablet = () => {
           </p>
         </div>
         <!-- TextArea -->
-            <textarea id="text-area" class="p-6 w-11/12 h-56 bg-white rounded-lg mb-16" onkeydown = "textAreaDown(event)">Text Area</textarea>
+            <textarea autofocus id="text-area" class="p-6 w-11/12 h-56 bg-white rounded-lg mb-16" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
         <!-- Keyboard -->
         <div class="flex flex-col bg-slate-100 p-4 space-y-2 w-full">
             <div class="flex flex-row space-x-2 justify-center">
@@ -286,7 +286,7 @@ const mobile = () => {
           </p>
         </div>
         <!-- TextArea -->
-            <textarea id="text-area" class="p-6 w-11/12 h-48 bg-white rounded-lg mb-16" onkeydown = "textAreaDown(event)">Text Area</textarea>
+            <textarea autofocus id="text-area" class="p-6 w-11/12 h-48 bg-white rounded-lg mb-16 font-mono" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
         <!-- Keyboard -->
         <div class="flex flex-col bg-slate-100 p-2 space-y-3 w-full">
             <div class="flex flex-row space-x-1 justify-center">
@@ -350,18 +350,40 @@ const mobile = () => {
   document.getElementById('container').innerHTML = temp;
 };
 
+// document.getElementById('text-area').focus();
+
+window.onload = function () {
+  desktop();
+};
+
 let keysPressed = {};
 
-const textAreaDown = event => {
-  //   console.log(event);
 
-  let { key } = event;
+const textAreaDown = event => {
+  console.log(event);
+
+  let { key, code } = event;
 
   if (keysPressed[key]) {
     keysPressed[key] += 1;
   } else {
     keysPressed[key] = 1;
   }
+
+  if(key == "Escape") {
+    reset();
+  }
+
+  if (key == 'Shift') {
+    console.log(code.toUpperCase());
+    document.getElementById(code.toUpperCase()).style.backgroundColor = 'red';
+    setTimeout(() => {
+      document.getElementById(code.toUpperCase()).style.backgroundColor =
+        'white';
+    }, 200);
+
+    document.getElementById('result').innerHTML = JSON.stringify(keysPressed);
+  }else{
 
   console.log(key.toUpperCase());
 
@@ -371,6 +393,8 @@ const textAreaDown = event => {
   }, 200);
 
   document.getElementById('result').innerHTML = JSON.stringify(keysPressed);
+  }
+
 };
 
 const reset = () => {
