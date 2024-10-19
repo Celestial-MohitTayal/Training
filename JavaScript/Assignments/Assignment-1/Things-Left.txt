@@ -1,3 +1,5 @@
 To check multiple ids in one tag.
 designing the table for count.
-to convert the tailwind cdn to tailwind cli.
+convert the tailwind cdn to tailwind cli.
+onload - Done
+text area focused - Done
