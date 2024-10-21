@@ -390,7 +390,7 @@ const textAreaDown = event => {
 
   console.log(key.toUpperCase());
 
-  document.getElementById(key.toUpperCase()).style.backgroundColor = 'red';
+  document.getElementById(key.toUpperCase()).style.backgroundColor = '#7FFF00';
   setTimeout(() => {
     document.getElementById(key.toUpperCase()).style.backgroundColor = 'white';
   }, 200);
