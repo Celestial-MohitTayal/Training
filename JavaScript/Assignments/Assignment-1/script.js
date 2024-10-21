@@ -25,10 +25,11 @@ const reset = () => {
 
 // Show-Count
 const showCount = () => {
-  document.getElementById('tableContent').style.opacity = '1';
-  document.getElementById('keysTable').innerHTML = '';
   const tableBody = document.getElementById('keysTable');
   if (boolean) {
+
+  document.getElementById('tableContent').style.opacity = '1';
+  document.getElementById('keysTable').innerHTML = '';
     for (const key in keysPressed) {
       const row = document.createElement('tr');
       row.classList.add('border-b');
