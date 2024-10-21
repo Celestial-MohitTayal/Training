@@ -1,6 +1,6 @@
 const desktop = () => {
   let temp = `<div
-      class="mx-auto mt-40 w-min flex flex-col space-y-4 m-auto border-8 rounded-xl border-black justify-center items-center"
+      class="w-min flex flex-col space-y-4 m-auto border-8 rounded-xl border-black justify-center items-center"
     >
       <!-- Heading -->
       <div class="flex flex-col justify-center items-center m-10">
@@ -182,14 +182,15 @@ const desktop = () => {
     </div>`;
 
   document.getElementById('container').innerHTML = temp;
-  document.getElementById('result').textContent = "";
+  keysPressed = {};
+  document.getElementById('keysTable').innerHTML = '';
 };
 
 // -----------------------------
 
 const tablet = () => {
   let temp = `<div
-      class="mx-auto mt-40 w-min rounded-2xl border-black border-[16px]"
+      class="mx-auto w-min rounded-2xl border-black border-[16px]"
     >
     <!-- Content -->
       <div class="flex flex-col justify-center items-center bg-yellow-300">
@@ -203,7 +204,7 @@ const tablet = () => {
           </p>
         </div>
         <!-- TextArea -->
-            <textarea autofocus id="text-area" class="p-6 w-11/12 h-56 bg-white rounded-lg mb-16" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
+            <textarea autofocus id="text-area" class="p-6 w-11/12 h-56 bg-white rounded-lg mb-16 outline-none" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
         <!-- Keyboard -->
         <div class="flex flex-col bg-slate-100 p-4 space-y-2 w-full">
             <div class="flex flex-row space-x-2 justify-center">
@@ -264,13 +265,14 @@ const tablet = () => {
     </div>`;
 
   document.getElementById('container').innerHTML = temp;
-  document.getElementById('result').textContent = "";
+  keysPressed = {};
+  document.getElementById('keysTable').innerHTML = '';
 };
 
 // ------------------------------------------------------
 
 const mobile = () => {
-  let temp = `<div class="relative mx-auto my-40 border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+  let temp = `<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
     <div class="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
     <div class="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
     <div class="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
@@ -288,7 +290,7 @@ const mobile = () => {
           </p>
         </div>
         <!-- TextArea -->
-            <textarea autofocus id="text-area" class="p-6 w-11/12 h-48 bg-white rounded-lg mb-16 font-mono" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
+            <textarea autofocus id="text-area" class="p-6 w-11/12 h-48 bg-white rounded-lg mb-16 font-mono outline-none" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
         <!-- Keyboard -->
         <div class="flex flex-col bg-slate-100 p-2 space-y-3 w-full">
             <div class="flex flex-row space-x-1 justify-center">
@@ -350,21 +352,21 @@ const mobile = () => {
 </div>`;
 
   document.getElementById('container').innerHTML = temp;
-  document.getElementById('result').textContent = "";
+  keysPressed = {};
+  document.getElementById('keysTable').innerHTML = '';
 };
-
-// document.getElementById('text-area').focus();
 
 window.onload = function () {
   desktop();
 };
 
 let keysPressed = {};
-
+let boolean = true;
 
 const textAreaDown = event => {
-  console.log(event);
+  // console.log(event); // - check
 
+  boolean = true;
   let { key, code } = event;
 
   if (keysPressed[key]) {
@@ -373,33 +375,71 @@ const textAreaDown = event => {
     keysPressed[key] = 1;
   }
 
-  if(key == "Escape") {
+  // Escape-Key-Reset
+  if (key == 'Escape') {
     reset();
   }
 
-  if (key == 'Shift' || key == 'Alt'|| key === 'Meta' || key == 'Control') {
+  if (key == 'Shift' || key == 'Alt' || key === 'Meta' || key == 'Control') {
     console.log(code.toUpperCase());
-    document.getElementById(code.toUpperCase()).style.backgroundColor = 'red';
+
+    document.getElementById(code.toUpperCase()).style.backgroundColor =
+      '#7FFF00';
+
     setTimeout(() => {
       document.getElementById(code.toUpperCase()).style.backgroundColor =
         'white';
     }, 200);
+  } else {
+    console.log(key.toUpperCase());
 
-    document.getElementById('result').innerHTML = JSON.stringify(keysPressed);
-  }else{
+    document.getElementById(key.toUpperCase()).style.backgroundColor =
+      '#7FFF00';
 
-  console.log(key.toUpperCase());
-
-  document.getElementById(key.toUpperCase()).style.backgroundColor = '#7FFF00';
-  setTimeout(() => {
-    document.getElementById(key.toUpperCase()).style.backgroundColor = 'white';
-  }, 200);
-
-  document.getElementById('result').innerHTML = JSON.stringify(keysPressed);
+    setTimeout(() => {
+      document.getElementById(key.toUpperCase()).style.backgroundColor =
+        'white';
+    }, 200);
   }
-
 };
 
+// Reset
 const reset = () => {
   document.getElementById('text-area').value = '';
+  keysPressed = {};
+  document.getElementById('keysTable').innerHTML = '';
+  document.getElementById('tableContent').style.opacity = '0';
+};
+
+// Show-Count
+const showCount = () => {
+  document.getElementById('tableContent').style.opacity = '1';
+  document.getElementById('keysTable').innerHTML = ''
+  const tableBody = document.getElementById('keysTable');
+  if (boolean) {
+    for (const key in keysPressed) {
+      const row = document.createElement('tr');
+      row.classList.add('border-b');
+
+      const keyCell = document.createElement('td');
+      keyCell.classList.add('py-2', 'px-4', 'text-gray-700');
+      keyCell.textContent = key;
+
+      const countCell = document.createElement('td');
+      countCell.classList.add('py-2', 'px-4', 'text-gray-700');
+      countCell.textContent = keysPressed[key];
+
+      row.appendChild(keyCell);
+      row.appendChild(countCell);
+
+      tableBody.appendChild(row);
+    }
+  boolean = false;
+  }
+};
+
+const hideCount = () => {
+  boolean = true;
+  document.getElementById('keysTable').innerHTML = '';
+  document.getElementById('tableContent').style.opacity = '0';
 };
