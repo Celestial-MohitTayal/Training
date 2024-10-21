@@ -15,166 +15,166 @@ const desktop = () => {
           <textarea  autofocus id="text-area" class="p-4 w-11/12 h-56 bg-white border-none outline-none" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
       <!-- Keyboard -->
       <!-- Flex-Col Container -->
-      <div class="flex flex-col w-full space-y-1 p-4 bg-slate-100">
+      <div class="flex flex-col w-full space-y-2 p-2 bg-slate-200 items-center justify-center">
         <!-- Row-1 -->
         <div class="flex flex-row space-x-2">
-          <div id="ESCAPE" class="w-14 text-center bg-white shadow-lg rounded">esc</div>
-          <div id="F1" class="w-11 text-center bg-white shadow-lg rounded">F1</div>
-          <div id="F2" class="w-11 text-center bg-white shadow-lg rounded">F2</div>
-          <div id="F3" class="w-11 text-center bg-white shadow-lg rounded">F3</div>
-          <div id="F4" class="w-11 text-center bg-white shadow-lg rounded">F4</div>
-          <div id="F5" class="w-11 text-center bg-white shadow-lg rounded">F5</div>
-          <div id="F6" class="w-11 text-center bg-white shadow-lg rounded">F6</div>
-          <div id="F7" class="w-11 text-center bg-white shadow-lg rounded">F7</div>
-          <div id="F8" class="w-11 text-center bg-white shadow-lg rounded">F8</div>
-          <div id="F9" class="w-11 text-center bg-white shadow-lg rounded">F9</div>
-          <div id="F10" class="w-11 text-center bg-white shadow-lg rounded">F10</div>
-          <div id="F11" class="w-11 text-center bg-white shadow-lg rounded">F11</div>
-          <div id="F12" class="w-11 text-center bg-white shadow-lg rounded">F12</div>
+          <div id="ESCAPE" class="w-16 h-8 text-center bg-white shadow-lg rounded">esc</div>
+          <div id="F1" class="w-12 text-center bg-white shadow-md rounded">F1</div>
+          <div id="F2" class="w-12 text-center bg-white shadow-md rounded">F2</div>
+          <div id="F3" class="w-12 text-center bg-white shadow-md rounded">F3</div>
+          <div id="F4" class="w-12 text-center bg-white shadow-md rounded">F4</div>
+          <div id="F5" class="w-12 text-center bg-white shadow-md rounded">F5</div>
+          <div id="F6" class="w-12 text-center bg-white shadow-md rounded">F6</div>
+          <div id="F7" class="w-12 text-center bg-white shadow-md rounded">F7</div>
+          <div id="F8" class="w-12 text-center bg-white shadow-md rounded">F8</div>
+          <div id="F9" class="w-12 text-center bg-white shadow-md rounded">F9</div>
+          <div id="F10" class="w-12 text-center bg-white shadow-md rounded">F10</div>
+          <div id="F11" class="w-12 text-center bg-white shadow-md rounded">F11</div>
+          <div id="F12" class="w-12 text-center bg-white shadow-md rounded">F12</div>
         </div>
         <!-- Row-2 -->
         <div class="flex flex-row space-x-2">
-          <div id="~" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="~" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             ~
           </div>
-          <div id="1" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="1" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             ! <br />
             1
           </div>
-          <div id="2" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="2" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             @ <br />
             2
           </div>
-          <div id="3" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="3" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             # <br />3
           </div>
-          <div id="4" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="4" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             $ <br />
             4
           </div>
-          <div id="5" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="5" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             % <br />
             5
           </div>
-          <div id="6" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="6" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             ^ <br />
             6
           </div>
-          <div id="7" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="7" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             & <br />
             7
           </div>
-          <div id="8" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="8" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             * <br />
             8
           </div>
-          <div id="9" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="9" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             ( <br />
             9
           </div>
-          <div id="0" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="0" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             ) <br />
             0
           </div>
-          <div id="-" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="-" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             _ <br />
             -
           </div>
-          <div id="=" class="w-10 text-sm bg-white text-center shadow-lg rounded">
+          <div id="=" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             + <br />
             =
           </div>
-          <div id="BACKSPACE" class="w-14 text-center text-sm bg-white shadow-lg rounded">
+          <div id="BACKSPACE" class="w-16 h-11 text-center text-sm bg-white shadow-md rounded">
             back space
           </div>
         </div>
         <!-- Row-3 -->
         <div class="flex flex-row space-x-2">
-          <div id="TAB" class="w-14 bg-white text-center shadow-lg rounded">tab</div>
-          <div id="Q" class="w-10 bg-white text-center shadow-lg rounded">Q</div>
-          <div id="W" class="w-10 bg-white text-center shadow-lg rounded">W</div>
-          <div id="E" class="w-10 bg-white text-center shadow-lg rounded">E</div>
-          <div id="R" class="w-10 bg-white text-center shadow-lg rounded">R</div>
-          <div id="T" class="w-10 bg-white text-center shadow-lg rounded">T</div>
-          <div id="Y" class="w-10 bg-white text-center shadow-lg rounded">Y</div>
-          <div id="U" class="w-10 bg-white text-center shadow-lg rounded">U</div>
-          <div id="I" class="w-10 bg-white text-center shadow-lg rounded">I</div>
-          <div id="O" class="w-10 bg-white text-center shadow-lg rounded">O</div>
-          <div id="P" class="w-10 bg-white text-center shadow-lg rounded">P</div>
-          <div id="[" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="TAB" class="w-16 h-11 bg-white text-center shadow-md rounded">tab</div>
+          <div id="Q" class="w-11 h-11 bg-white text-center shadow-md rounded">Q</div>
+          <div id="W" class="w-11 h-11 bg-white text-center shadow-md rounded">W</div>
+          <div id="E" class="w-11 h-11 bg-white text-center shadow-md rounded">E</div>
+          <div id="R" class="w-11 h-11 bg-white text-center shadow-md rounded">R</div>
+          <div id="T" class="w-11 h-11 bg-white text-center shadow-md rounded">T</div>
+          <div id="Y" class="w-11 h-11 bg-white text-center shadow-md rounded">Y</div>
+          <div id="U" class="w-11 h-11 bg-white text-center shadow-md rounded">U</div>
+          <div id="I" class="w-11 h-11 bg-white text-center shadow-md rounded">I</div>
+          <div id="O" class="w-11 h-11 bg-white text-center shadow-md rounded">O</div>
+          <div id="P" class="w-11 h-11 bg-white text-center shadow-md rounded">P</div>
+          <div id="[" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             { <br />
             [
           </div>
-          <div id="]" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="]" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             } <br />
             ]
           </div>
-          <div id="" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             | <br />
             \
           </div>
         </div>
         <!-- Row-4 -->
         <div class="flex flex-row space-x-2">
-          <div id="CAPSLOCK" class="w-20 bg-white text-center shadow-lg rounded">
+          <div id="CAPSLOCK" class="w-20 h-11 bg-white text-center shadow-md rounded">
             caps lock
           </div>
-          <div id="A" class="w-10 bg-white text-center shadow-lg rounded">A</div>
-          <div id="S" class="w-10 bg-white text-center shadow-lg rounded">S</div>
-          <div id="D" class="w-10 bg-white text-center shadow-lg rounded">D</div>
-          <div id="F" class="w-10 bg-white text-center shadow-lg rounded">F</div>
-          <div id="G" class="w-10 bg-white text-center shadow-lg rounded">G</div>
-          <div id="H" class="w-10 bg-white text-center shadow-lg rounded">H</div>
-          <div id="J" class="w-10 bg-white text-center shadow-lg rounded">J</div>
-          <div id="K" class="w-10 bg-white text-center shadow-lg rounded">K</div>
-          <div id="L" class="w-10 bg-white text-center shadow-lg rounded">L</div>
-          <div id=";" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="A" class="w-11 h-11 bg-white text-center shadow-md rounded">A</div>
+          <div id="S" class="w-11 h-11 bg-white text-center shadow-md rounded">S</div>
+          <div id="D" class="w-11 h-11 bg-white text-center shadow-md rounded">D</div>
+          <div id="F" class="w-11 h-11 bg-white text-center shadow-md rounded">F</div>
+          <div id="G" class="w-11 h-11 bg-white text-center shadow-md rounded">G</div>
+          <div id="H" class="w-11 h-11 bg-white text-center shadow-md rounded">H</div>
+          <div id="J" class="w-11 h-11 bg-white text-center shadow-md rounded">J</div>
+          <div id="K" class="w-11 h-11 bg-white text-center shadow-md rounded">K</div>
+          <div id="L" class="w-11 h-11 bg-white text-center shadow-md rounded">L</div>
+          <div id=";" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             : <br />
             ;
           </div>
-          <div id="'" class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="'" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             " <br />
             '
           </div>
-          <div id="ENTER" class="w-16 text-center bg-white shadow-lg rounded">enter</div>
+          <div id="ENTER" class="w-20 h-11 text-center bg-white shadow-md rounded">enter</div>
         </div>
         <!-- Row-5 -->
         <div class="flex flex-row space-x-2">
-          <div id="SHIFTLEFT" class="w-24 bg-white text-center shadow-lg rounded-md">
+          <div id="SHIFTLEFT" class="w-24 h-11 bg-white text-center shadow-md rounded-md">
             shift
           </div>
-          <div id="Z" class="w-10 bg-white text-center shadow-lg rounded">Z</div>
-          <div id="X" class="w-10 bg-white text-center shadow-lg rounded">X</div>
-          <div id="C" class="w-10 bg-white text-center shadow-lg rounded">C</div>
-          <div id="V" class="w-10 bg-white text-center shadow-lg rounded">V</div>
-          <div id="B" class="w-10 bg-white text-center shadow-lg rounded">B</div>
-          <div id="N" class="w-10 bg-white text-center shadow-lg rounded">N</div>
-          <div id="M" class="w-10 bg-white text-center shadow-lg rounded">M</div>
-          <div id="," class="w-10 text-xs bg-white text-center shadow-lg rounded">
+          <div id="Z" class="w-11 h-11 bg-white text-center shadow-md rounded">Z</div>
+          <div id="X" class="w-11 h-11 bg-white text-center shadow-md rounded">X</div>
+          <div id="C" class="w-11 h-11 bg-white text-center shadow-md rounded">C</div>
+          <div id="V" class="w-11 h-11 bg-white text-center shadow-md rounded">V</div>
+          <div id="B" class="w-11 h-11 bg-white text-center shadow-md rounded">B</div>
+          <div id="N" class="w-11 h-11 bg-white text-center shadow-md rounded">N</div>
+          <div id="M" class="w-11 h-11 bg-white text-center shadow-md rounded">M</div>
+          <div id="," class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             < <br />
             ,
           </div>
-          <div id="." class="w-10 text-xs bg-white text-center shadow-xl rounded">
+          <div id="." class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             > <br />
             .
           </div>
-          <div id="/" class="w-10 text-xs bg-white text-center shadow-xl rounded">
+          <div id="/" class="w-11 h-11 text-sm bg-white text-center shadow-md rounded">
             " <br />
             /
           </div>
-          <div id="SHIFTRIGHT" class="w-24 bg-white text-center shadow-xl rounded">shift</div>
+          <div id="SHIFTRIGHT" class="w-24 h-11 bg-white text-center shadow-md rounded">shift</div>
         </div>
         <!-- Row-6 -->
         <div class="flex flex-row space-x-2">
-          <div id="CONTROLLEFT" class="w-16 h-8 bg-white text-center shadow-xl rounded">
+          <div id="CONTROLLEFT" class="w-20 h-11 bg-white text-center shadow-md rounded">
             ctrl
           </div>
-          <div id="METALEFT" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
-          <div id="ALTLEFT" class="w-14 h-8 bg-white text-center shadow-xl rounded">alt</div>
-          <div id=" " class="w-72 h-8 bg-white text-center shadow-xl rounded"></div>
-          <div id="ALTRIGHT" class="w-12 h-8 bg-white text-center shadow-xl rounded">alt</div>
-          <div id="METARIGHT" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
-          <div id="CONTROLRIGHT" class="w-16 h-8 bg-white text-center shadow-xl rounded">
+          <div id="METALEFT" class="w-16 h-11 bg-white text-center shadow-md rounded">win</div>
+          <div id="ALTLEFT" class="w-14 h-11 bg-white text-center shadow-md rounded">alt</div>
+          <div id=" " class="w-72 h-11 bg-white text-center shadow-md rounded"></div>
+          <div id="ALTRIGHT" class="w-14 h-11 bg-white text-center shadow-md rounded">alt</div>
+          <div id="METARIGHT" class="w-16 h-11 bg-white text-center shadow-md rounded">win</div>
+          <div id="CONTROLRIGHT" class="w-20 h-11 bg-white text-center shadow-md rounded">
             ctrl
           </div>
         </div>
@@ -375,7 +375,7 @@ const textAreaDown = event => {
     keysPressed[key] = 1;
   }
 
-  // Escape-Key-Reset
+  // Escape-Key1Reset
   if (key == 'Escape') {
     reset();
   }
