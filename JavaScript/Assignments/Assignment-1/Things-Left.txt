@@ -1,5 +1,12 @@
-To check multiple ids in one tag.
-designing the table for count.
-convert the tailwind cdn to tailwind cli.
+designing the table for count. - done
 onload - Done
 text area focused - Done
+
+
+
+FeedBack:
+
+Show Button - Hide Button : Done
+Table Header show hide : Done
+Div Center :  Done
+Keyboard Attractiveness
