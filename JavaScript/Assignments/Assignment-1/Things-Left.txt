@@ -1,12 +1,6 @@
-designing the table for count. - done
-onload - Done
-text area focused - Done
-
-
-
 FeedBack:
-
 Show Button - Hide Button : Done
 Table Header show hide : Done
 Div Center :  Done
-Keyboard Attractiveness
+Keyboard Attractiveness : Done
+Code Readability/Spliting/Utility : Pending

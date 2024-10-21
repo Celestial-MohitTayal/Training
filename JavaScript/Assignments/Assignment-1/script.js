@@ -1,3 +1,110 @@
+// import { desktop, mobile, tablet } from './js/keyboard.js';
+// import {showCount, hideCount, reset} from './js/sideBar.js';
+
+if (HTMLScriptElement.supports?.('importmap')) {
+  console.log('Browser supports import maps.');
+}
+
+// Variables
+// export
+let keysPressed = {};
+// export
+let boolean = true;
+
+//-------------------------------------------------------
+
+// Reset
+const reset = () => {
+  document.getElementById('text-area').value = '';
+  keysPressed = {};
+  document.getElementById('keysTable').innerHTML = '';
+  document.getElementById('tableContent').style.opacity = '0';
+};
+
+//-------------------------------------------------------
+
+// Show-Count
+const showCount = () => {
+  document.getElementById('tableContent').style.opacity = '1';
+  document.getElementById('keysTable').innerHTML = '';
+  const tableBody = document.getElementById('keysTable');
+  if (boolean) {
+    for (const key in keysPressed) {
+      const row = document.createElement('tr');
+      row.classList.add('border-b');
+
+      const keyCell = document.createElement('td');
+      keyCell.classList.add('py-2', 'px-4', 'text-gray-700');
+      keyCell.textContent = key;
+
+      const countCell = document.createElement('td');
+      countCell.classList.add('py-2', 'px-4', 'text-gray-700');
+      countCell.textContent = keysPressed[key];
+
+      row.appendChild(keyCell);
+      row.appendChild(countCell);
+
+      tableBody.appendChild(row);
+    }
+    boolean = false;
+  }
+};
+
+//-------------------------------------------------------
+
+// Hide Count
+const hideCount = () => {
+  boolean = true;
+  document.getElementById('keysTable').innerHTML = '';
+  document.getElementById('tableContent').style.opacity = '0';
+};
+
+//-------------------------------------------------------
+
+// Key-Down Event
+// export
+const textAreaDown = event => {
+  // console.log(event); // - check
+  boolean = true;
+
+  let { key, code } = event;
+
+  if (keysPressed[key]) {
+    keysPressed[key] += 1;
+  } else {
+    keysPressed[key] = 1;
+  }
+
+  // Escape-Key-Reset
+  if (key == 'Escape') {
+    reset();
+  }
+
+  if (key == 'Shift' || key == 'Alt' || key === 'Meta' || key == 'Control') {
+    console.log(code.toUpperCase());
+
+    document.getElementById(code.toUpperCase()).style.backgroundColor =
+      '#7FFF00';
+
+    setTimeout(() => {
+      document.getElementById(code.toUpperCase()).style.backgroundColor =
+        'white';
+    }, 200);
+  } else {
+    console.log(key.toUpperCase());
+
+    document.getElementById(key.toUpperCase()).style.backgroundColor =
+      '#7FFF00';
+
+    setTimeout(() => {
+      document.getElementById(key.toUpperCase()).style.backgroundColor =
+        'white';
+    }, 200);
+  }
+};
+
+//-------------------------------------------------------
+
 const desktop = () => {
   let temp = `<div
       class="w-min flex flex-col space-y-4 m-auto border-8 rounded-xl border-black justify-center items-center"
@@ -12,7 +119,7 @@ const desktop = () => {
         </p>
       </div>
       <!-- TextArea -->
-          <textarea  autofocus id="text-area" class="p-4 w-11/12 h-56 bg-white border-none outline-none" onkeydown = "textAreaDown(event)" placeholder="tap here first.."></textarea>
+          <textarea  autofocus id="text-area" class="p-4 w-11/12 h-56 bg-white border-none outline-none" placeholder="tap here first.." onkeydown ="textAreaDown(event)"></textarea>
       <!-- Keyboard -->
       <!-- Flex-Col Container -->
       <div class="flex flex-col w-full space-y-2 p-2 bg-slate-200 items-center justify-center">
@@ -186,7 +293,7 @@ const desktop = () => {
   document.getElementById('keysTable').innerHTML = '';
 };
 
-// -----------------------------
+//-------------------------------------------------------
 
 const tablet = () => {
   let temp = `<div
@@ -269,7 +376,7 @@ const tablet = () => {
   document.getElementById('keysTable').innerHTML = '';
 };
 
-// ------------------------------------------------------
+//--------------------------------------------------------
 
 const mobile = () => {
   let temp = `<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
@@ -356,90 +463,9 @@ const mobile = () => {
   document.getElementById('keysTable').innerHTML = '';
 };
 
+//---------------------------------------------------------
+
+// OnLoad Func
 window.onload = function () {
   desktop();
-};
-
-let keysPressed = {};
-let boolean = true;
-
-const textAreaDown = event => {
-  // console.log(event); // - check
-
-  boolean = true;
-  let { key, code } = event;
-
-  if (keysPressed[key]) {
-    keysPressed[key] += 1;
-  } else {
-    keysPressed[key] = 1;
-  }
-
-  // Escape-Key1Reset
-  if (key == 'Escape') {
-    reset();
-  }
-
-  if (key == 'Shift' || key == 'Alt' || key === 'Meta' || key == 'Control') {
-    console.log(code.toUpperCase());
-
-    document.getElementById(code.toUpperCase()).style.backgroundColor =
-      '#7FFF00';
-
-    setTimeout(() => {
-      document.getElementById(code.toUpperCase()).style.backgroundColor =
-        'white';
-    }, 200);
-  } else {
-    console.log(key.toUpperCase());
-
-    document.getElementById(key.toUpperCase()).style.backgroundColor =
-      '#7FFF00';
-
-    setTimeout(() => {
-      document.getElementById(key.toUpperCase()).style.backgroundColor =
-        'white';
-    }, 200);
-  }
-};
-
-// Reset
-const reset = () => {
-  document.getElementById('text-area').value = '';
-  keysPressed = {};
-  document.getElementById('keysTable').innerHTML = '';
-  document.getElementById('tableContent').style.opacity = '0';
-};
-
-// Show-Count
-const showCount = () => {
-  document.getElementById('tableContent').style.opacity = '1';
-  document.getElementById('keysTable').innerHTML = ''
-  const tableBody = document.getElementById('keysTable');
-  if (boolean) {
-    for (const key in keysPressed) {
-      const row = document.createElement('tr');
-      row.classList.add('border-b');
-
-      const keyCell = document.createElement('td');
-      keyCell.classList.add('py-2', 'px-4', 'text-gray-700');
-      keyCell.textContent = key;
-
-      const countCell = document.createElement('td');
-      countCell.classList.add('py-2', 'px-4', 'text-gray-700');
-      countCell.textContent = keysPressed[key];
-
-      row.appendChild(keyCell);
-      row.appendChild(countCell);
-
-      tableBody.appendChild(row);
-    }
-  boolean = false;
-  }
-};
-
-const hideCount = () => {
-  boolean = true;
-  document.getElementById('keysTable').innerHTML = '';
-  document.getElementById('tableContent').style.opacity = '0';
 };

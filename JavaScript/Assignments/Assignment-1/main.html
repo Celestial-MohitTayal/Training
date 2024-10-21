@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+        <!-- scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
+    <!-- <script type="module" src="./js/keyboard.js"></script>
+    <script type="module" src="./js/sideBar.js"></script> -->
   </head>
   <body>
     <!-- Main Container -->
@@ -63,8 +66,8 @@
             </button>
             <button
               class="focus:outline-none text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              id="hideCount"
               onclick="hideCount()"
-
               >
               Hide Count
             </button>
@@ -78,7 +81,7 @@
                 </tr>
               </thead>
               <tbody id="keysTable">
-                <!-- Rows will be dynamically added here -->
+                <!-- Rows will add here -->
               </tbody>
             </table>
           </div>
