@@ -16,7 +16,7 @@
       <!-- NavBar Right -->
       <div class="flex flex-row space-x-3 lg:flex-col lg:space-y-10 p-10 items-center justify-center">
         <div class="flex flex-row space-x-2 lg:flex-col lg:space-y-2 items-center justify-center">
-          <h2 class="font-mono font-bold">Views</h2>
+          <h2 class="font-mono font-semibold text-2xl">Views</h2>
             <button
               type="button"
               class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
@@ -41,16 +41,48 @@
               Mobile
             </button>
         </div>
-        <div class="flex flex-col space-x-2 lg:flex-row lg:space-y-2 pl-10">
-          <button
-            class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
-            onclick="reset()"
-            >
-            Reset
-          </button>
-          <label class="font-semibold font-mono">or esc</label>
+          <div class="flex flex-col space-x-2 lg:flex-row lg:space-y-2 pl-10">
+            <button
+              class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onclick="reset()"
+              >
+              Reset
+            </button>
+            <label class="font-semibold font-mono">or esc</label>
+          </div>
+
+          <!-- Result-Container -->
+          <div class="p-2 mx-auto text-center">
+            <h1 class="text-2xl font-semibold mb-4">Keys Pressed Table</h1>
+            <button
+              class="focus:outline-none text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onclick="showCount()"
+
+              >
+              Show Count
+            </button>
+            <button
+              class="focus:outline-none text-white bg-red-400 hover:bg-red-500 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onclick="hideCount()"
+
+              >
+              Hide Count
+            </button>
+
+            <!-- Table structure -->
+            <table id="tableContent" class="opacity-0 min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-blue-500 text-white">
+                  <th class="py-3 px-4 text-left">Key</th>
+                  <th class="py-3 px-4 text-left">Count</th>
+                </tr>
+              </thead>
+              <tbody id="keysTable">
+                <!-- Rows will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div id="result" class="border-8 w-full h-full "></div>
       </div>
     </div>
   </body>
