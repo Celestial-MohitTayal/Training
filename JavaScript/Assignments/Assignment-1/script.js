@@ -166,15 +166,15 @@ const desktop = () => {
         </div>
         <!-- Row-6 -->
         <div class="flex flex-row space-x-2">
-          <div id="CONTROL" class="w-16 h-8 bg-white text-center shadow-xl rounded">
+          <div id="CONTROLLEFT" class="w-16 h-8 bg-white text-center shadow-xl rounded">
             ctrl
           </div>
-          <div id="META" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
-          <div id="ALT" class="w-14 h-8 bg-white text-center shadow-xl rounded">alt</div>
+          <div id="METALEFT" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
+          <div id="ALTLEFT" class="w-14 h-8 bg-white text-center shadow-xl rounded">alt</div>
           <div id=" " class="w-72 h-8 bg-white text-center shadow-xl rounded"></div>
-          <div id="ALT" class="w-12 h-8 bg-white text-center shadow-xl rounded">alt</div>
-          <div id="META" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
-          <div id="CONTROL" class="w-16 h-8 bg-white text-center shadow-xl rounded">
+          <div id="ALTRIGHT" class="w-12 h-8 bg-white text-center shadow-xl rounded">alt</div>
+          <div id="METARIGHT" class="w-14 h-8 bg-white text-center shadow-xl rounded">win</div>
+          <div id="CONTROLRIGHT" class="w-16 h-8 bg-white text-center shadow-xl rounded">
             ctrl
           </div>
         </div>
@@ -182,6 +182,7 @@ const desktop = () => {
     </div>`;
 
   document.getElementById('container').innerHTML = temp;
+  document.getElementById('result').textContent = "";
 };
 
 // -----------------------------
@@ -263,6 +264,7 @@ const tablet = () => {
     </div>`;
 
   document.getElementById('container').innerHTML = temp;
+  document.getElementById('result').textContent = "";
 };
 
 // ------------------------------------------------------
@@ -348,6 +350,7 @@ const mobile = () => {
 </div>`;
 
   document.getElementById('container').innerHTML = temp;
+  document.getElementById('result').textContent = "";
 };
 
 // document.getElementById('text-area').focus();
@@ -374,7 +377,7 @@ const textAreaDown = event => {
     reset();
   }
 
-  if (key == 'Shift') {
+  if (key == 'Shift' || key == 'Alt'|| key === 'Meta' || key == 'Control') {
     console.log(code.toUpperCase());
     document.getElementById(code.toUpperCase()).style.backgroundColor = 'red';
     setTimeout(() => {
