@@ -1,0 +1,4 @@
+Things I learned while performing this task:
+    - async/await fetching
+    - use of, and how to use optional chaining
+    - classlist.add and classlist.remove 
