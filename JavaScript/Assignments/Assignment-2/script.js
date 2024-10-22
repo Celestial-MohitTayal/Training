@@ -35,7 +35,7 @@ const getCharDetails = index => {
   fetch(url)
     .then(response => response.json())
     .then(char => {
-      let temp = `<p class="text-center text-gray-700 opacity-80 mb-4">Please click on pop up display to close.</p>
+      let temp = `<p class="text-center text-gray-700 opacity-80 mb-4">Please click on below card to close.</p>
       <div
       class="flex flex-row font-sans w-[650px] h-min bg-gray-700 text-white rounded-xl shadow-2xl"
       onclick = "removeCharDetails()"
