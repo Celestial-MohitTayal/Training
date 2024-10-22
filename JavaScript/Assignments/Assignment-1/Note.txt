@@ -1,0 +1,7 @@
+Things I learned while performing this task:
+    - Object Destructuring Line-71: script.js
+    - Tailwind CSS (CDN)
+    - createElement, appendChild, .style, .classList.add etc.
+    - got to know more about event.
+    - modules, export, import of functions while trying to split the code.
+    - .supports?. - optional chaining
