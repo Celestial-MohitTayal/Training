@@ -1,3 +1,7 @@
+document.getElementById('delete').addEventListener('click', (index) => {
+    console.log();
+})
+
 const getUser = async () => {
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -35,7 +39,7 @@ const getUser = async () => {
            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
         </td>
         <td class="px-6 py-4 text-right">
-           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+           <a href="#" id="delete" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
         </td>
         </tr>`;
       document.getElementById('userDetails').innerHTML = temp;
