@@ -6,6 +6,29 @@
 //     console.log();
 // })
 
+
+//-------------Add New Button--------------
+let addNewButton = document.getElementById('addNewUser');
+let formTemplate = document.getElementById('form');
+let container = document.getElementById('container')
+
+addNewButton.addEventListener('click', () => {
+    //pop-up effect
+    formTemplate.classList.remove('hidden');
+    container.classList.add('blur-lg')
+})
+
+//-------------Save Button---------------
+let saveButton = document.getElementById('saveUser');
+
+saveButton.addEventListener('click', () => {
+    //pop-up effect
+    container.classList.add('hidden')
+    formTemplate.classList.remove('blur-lg');
+})
+
+
+//------------Get User---------------------
 const getUser = async () => {
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -35,7 +58,7 @@ const getUser = async () => {
         </th>
         <td class="px-6 py-4">${user?.username ?? 'Unknown'}</td>
         <td class="px-6 py-4">${user?.email ?? 'Unknown'}</td>
-        <td class="px-6 py-4">${user?.address?.suite ?? 'Unknown'}, ${user?.address?.street ?? 'Unknown'}, ${user?.address?.city ?? 'Unknown'}, ${user?.address?.zipcode ?? 'Unknown'} </td>
+        <td class="px-6 py-4">${user?.address?.suite ?? 'Unknown'}, ${user?.address?.street ?? 'Unknown'}, ${user?.address?.city ?? 'Unknown'} - ${user?.address?.zipcode ?? 'Unknown'} </td>
         <td class="px-6 py-4">${user?.phone ?? 'Unknown'}</td>
         <td class="px-6 py-4">${user?.website ?? 'Unknown'}</td>
         <td class="px-6 py-4">${user?.company?.name ?? 'Unknown'}</td>
@@ -53,6 +76,7 @@ const getUser = async () => {
     }
   };
   
+  //-----on load-----
   window.onload = function () {
     getUser();
   };
