@@ -1,6 +1,10 @@
-document.getElementById('delete').addEventListener('click', (index) => {
-    console.log();
-})
+// document.getElementById('delete').addEventListener('click', (index) => {
+//     console.log();
+// })
+
+// document.getElementById('edit').addEventListener('click', (index) => {
+//     console.log();
+// })
 
 const getUser = async () => {
     try {
@@ -36,7 +40,7 @@ const getUser = async () => {
         <td class="px-6 py-4">${user?.website ?? 'Unknown'}</td>
         <td class="px-6 py-4">${user?.company?.name ?? 'Unknown'}</td>
         <td class="px-6 py-4 text-right">
-           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+           <a href="#" id="edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
         </td>
         <td class="px-6 py-4 text-right">
            <a href="#" id="delete" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
