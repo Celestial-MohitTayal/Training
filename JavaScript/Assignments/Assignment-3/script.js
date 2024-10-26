@@ -18,7 +18,7 @@ const getUser = async () => {
     localStorage.setItem('array', stringifiedUserArray);
     let arrayFromStorage = localStorage.getItem('array');
     arrayParsed = arrayParsed.concat(JSON.parse(arrayFromStorage));
-    console.log(arrayParsed);
+    // console.log(arrayParsed);
 
     //table data
     let temp = '';
@@ -31,9 +31,9 @@ const getUser = async () => {
       }</td>
       <td class="px-6 py-4">${user?.username ?? 'Unknown'}</td>
       <td class="px-6 py-4">${user?.email ?? 'Unknown'}</td>
-      <td class="px-6 py-4">${user?.address?.suite ?? 'Unknown'}, ${
+      <td class="px-6 py-4">${user?.address?.suite ?? 'Unknown'} ${
         user?.address?.street ?? 'Unknown'
-      }, ${user?.address?.city ?? 'Unknown'} - ${
+      } ${user?.address?.city ?? 'Unknown'}  ${
         user?.address?.zipcode ?? 'Unknown'
       } </td>
       <td class="px-6 py-4">${user?.phone ?? 'Unknown'}</td>
@@ -43,7 +43,7 @@ const getUser = async () => {
          <a href="#" id="edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
       </td>
       <td class="px-6 py-4 text-right">
-         <a href="#" id="delete" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+         <a onclick="delUser(${index})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
       </td>
       </tr>`;
       document.getElementById('userDetails').innerHTML = temp;
@@ -68,10 +68,10 @@ const updateUser = (keyword = '') => {
       }</td>
       <td class="px-6 py-4">${user?.username ?? 'Unknown'}</td>
       <td class="px-6 py-4">${user?.email ?? 'Unknown'}</td>
-      <td class="px-6 py-4">${user?.address?.suite ?? 'Unknown'}, ${
-        user?.address?.street ?? 'Unknown'
-      }, ${user?.address?.city ?? 'Unknown'} - ${
-        user?.address?.zipcode ?? 'Unknown'
+      <td class="px-6 py-4">${user?.address?.suite ?? 'Unknown'} ${
+        user?.address?.street ?? ''
+      } ${user?.address?.city ?? ''}  ${
+        user?.address?.zipcode ?? ''
       } </td>
       <td class="px-6 py-4">${user?.phone ?? 'Unknown'}</td>
       <td class="px-6 py-4">${user?.website ?? 'Unknown'}</td>
@@ -80,7 +80,7 @@ const updateUser = (keyword = '') => {
          <a href="#" id="edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
       </td>
       <td class="px-6 py-4 text-right">
-         <a href="#" id="delete" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+         <button onclick="delUser(${index})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
       </td>
       </tr>`;
     }
@@ -105,6 +105,7 @@ addNewButton.addEventListener('click', e => {
 let saveButton = document.getElementById('saveUser');
 
 saveButton.addEventListener('click', e => {
+  e.preventDefault();
   // console.log(arrayParsed);
 
   //save feature
@@ -120,21 +121,30 @@ saveButton.addEventListener('click', e => {
     name: name,
     username: username,
     email: email,
-    address: address,
+    address: {suite: address},
     phone: phonenumber,
     website: website,
-    company: company,
+    company: {name: company},
   };
 
   arrayParsed.push(newuser);
   console.log(arrayParsed);
   updateUser();
+
   //pop-up effect
   container.classList.remove('blur-lg');
   formTemplate.classList.add('hidden');
-
-  e.preventDefault();
 });
+
+//-----Delete Button------
+
+let delUser = (index) => {
+    // event.preventDefault();
+    arrayParsed.splice(index, 1);
+    updateUser();
+    console.log(arrayParsed);
+}
+
 
 //-----on load-----
 window.onload = function () {
