@@ -1,11 +1,3 @@
-// document.getElementById('delete').addEventListener('click', (index) => {
-//     console.log();
-// })
-
-// document.getElementById('edit').addEventListener('click', (index) => {
-//     console.log();
-// })
-
 //------------Get User---------------------
 let arrayParsed = [];
 const getUser = async () => {
@@ -40,7 +32,7 @@ const getUser = async () => {
       <td class="px-6 py-4">${user?.website ?? 'Unknown'}</td>
       <td class="px-6 py-4">${user?.company?.name ?? 'Unknown'}</td>
       <td class="px-6 py-4 text-right">
-         <a href="#" id="edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+         <a onclick="editUser(${index})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
       </td>
       <td class="px-6 py-4 text-right">
          <a onclick="delUser(${index})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
@@ -77,7 +69,7 @@ const updateUser = (keyword = '') => {
       <td class="px-6 py-4">${user?.website ?? 'Unknown'}</td>
       <td class="px-6 py-4">${user?.company?.name ?? 'Unknown'}</td>
       <td class="px-6 py-4 text-right">
-         <a href="#" id="edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+         <button onclick="editUser(${index})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</button>
       </td>
       <td class="px-6 py-4 text-right">
          <button onclick="delUser(${index})" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
@@ -101,13 +93,28 @@ addNewButton.addEventListener('click', e => {
   e.preventDefault();
 });
 
+//------------Edit Button---------------
+let userIndex = -1;
+const editUser = (index) => {
+    let userInfo = arrayParsed[index];
+    userIndex = index;
+    document.getElementById("name").value = userInfo.name;
+    document.getElementById("username").value = userInfo.username;
+    document.getElementById("email").value = userInfo.email;
+    document.getElementById("company").value = userInfo.company.name;
+    document.getElementById("website").value = userInfo.website;
+    document.getElementById("address").value = userInfo.address.suite;
+    document.getElementById("phonenumber").value = userInfo.phone;
+    //pop-up effect
+    formTemplate.classList.remove('hidden');
+    container.classList.add('blur-lg');
+}
+
 //-------------Save Button---------------
 let saveButton = document.getElementById('saveUser');
 
 saveButton.addEventListener('click', e => {
   e.preventDefault();
-  // console.log(arrayParsed);
-
   //save feature
   let name = document.getElementById('name').value;
   let username = document.getElementById('username').value;
@@ -127,7 +134,11 @@ saveButton.addEventListener('click', e => {
     company: {name: company},
   };
 
-  arrayParsed.push(newuser);
+  if(userIndex > -1){
+    arrayParsed[userIndex] = newuser;
+  }else{
+    arrayParsed.push(newuser);
+  }
   console.log(arrayParsed);
   updateUser();
 
