@@ -10,8 +10,6 @@ const getUser = async () => {
     localStorage.setItem('array', stringifiedUserArray);
     let arrayFromStorage = localStorage.getItem('array');
     arrayParsed = arrayParsed.concat(JSON.parse(arrayFromStorage));
-    // console.log(arrayParsed);
-
     //table data
     let temp = '';
     arrayParsed.map((user, index) => {
@@ -89,7 +87,6 @@ addNewButton.addEventListener('click', e => {
   //pop-up effect
   formTemplate.classList.remove('hidden');
   container.classList.add('blur-lg');
-  console.log(arrayParsed);
   e.preventDefault();
 });
 
@@ -139,23 +136,28 @@ saveButton.addEventListener('click', e => {
   }else{
     arrayParsed.push(newuser);
   }
-  console.log(arrayParsed);
   updateUser();
-
+  userIndex = -1;
+  //clear form
+  document.getElementById("name").value = "";
+  document.getElementById("username").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("company").value = "";
+  document.getElementById("website").value = "";
+  document.getElementById("address").value = "";
+  document.getElementById("phonenumber").value = "";
   //pop-up effect
   container.classList.remove('blur-lg');
   formTemplate.classList.add('hidden');
 });
 
 //-----Delete Button------
-
 let delUser = (index) => {
     // event.preventDefault();
     arrayParsed.splice(index, 1);
     updateUser();
     console.log(arrayParsed);
 }
-
 
 //-----on load-----
 window.onload = function () {
