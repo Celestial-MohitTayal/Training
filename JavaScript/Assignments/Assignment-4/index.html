@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="p-3 flex justify-center bg-gradient-to-r from-pink-600 to-purple-600 w-full h-screen">
+        <div class="w-full max-w-[540px] max-h-min rounded-2xl p-5 pb-12 bg-white mt-24">
+            <h2 class="flex justify-left text-3xl font-mono font-semibold mb-5 text-blue-800"> To-Do List <img class="w-10 ml-4" src="images/icon.png"/></h2>
+            <div class="flex justify-center items-center bg-gray-100 rounded-3xl pl-5 mb-6">
+                <input class="flex-1 border-none p-3 bg-opacity-0 outline-none bg-gray-200" type="text" id="input-box" placeholder="Add Your Text"/>
+                <button class="border-none outline-none px-10 py-3 text-white font-medium text-center bg-red-400 rounded-3xl " onclick="addTask()"> Add </button>
+            </div>
+            <ul id="list-crontainer">
+            </ul>
+        </div>
+    </div>
+    <script src="script.js">   </script>
+</body>
+</html>
