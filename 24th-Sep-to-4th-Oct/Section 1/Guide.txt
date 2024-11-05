@@ -1,0 +1,1109 @@
+<---------------------------------------------HTML & HTML5 Tags------------------------------------------>
+
+Q:  What is HTML?
+->  HyperText Markup Language:
+    used to structure content on a webpage images, text, forms etc
+    we structure content using HTML tags.
+    <p> Contetnt </p>
+    <a> link </a>
+    <img>
+
+    --------------------------------------
+    <!DOCTYPE html>     ->  This is tachnically not an HTML 'tag', but an 'information' for the browser to know what document type to expect.
+    <html lang="en">    ->  The <html> tag is teh container for all other HTML elements, expect for the <!DOCTYPE> tag.
+                            We also include 'lang' attribute inside this tag, to declare the language on the webpage. This is done in order to assist search engines and browsers.
+
+    <head>              ->  The head tag is where we placed all 'metadata' for the webpage. metadata is data about html document, which is not displayed on the page.
+    <title>HTML</title>     This this data is usually document title, character set, page description etc.
+    </head>                 
+
+    <body>              ->  This tag is the place where we will place all of the visual content of our web page such as heading, paragrapha, cideos etc.
+
+    </body>
+                        ->  Remember to close all the tags with their corresponding closing tag.
+    </html>                         
+
+    # this is the bare minimum an HTML document should contain before adding any other elements to the page.
+
+    ---------------------------------------
+    <!DOCTYPE  html>
+    <html lang="en">
+        <head>
+            <title> Text </title>
+        </head>
+
+        <body>
+        <!--- Comment --->
+        <h1> Heading 1 </h1>
+        <h6> Heading 6 </h6>
+
+        <p> This is a paragraph </p>        ->paragraphs have one blank line inserted before and after them.
+
+        <a href="">Link</a>                 ->it defines hyperlink.
+
+        <p>
+        This text will break her <br/>
+        and continue here
+        </p>
+
+        <p>
+        The
+        <abbr title="World Health Organisation">    ->This will create a cool tooltipwhen you hover over the text.
+        WHO
+        </abbr>
+        was found in 1948
+        </p>
+
+        <p>
+        The First
+        <cite>Star Wars<cite>       -> The cite tag is used to define the title of a creative work, such as a movie, song, book etc.
+        was released in 1977.
+        </p>
+        
+        <blockquote cite = "">
+        abcdef                      -> it is used define a block of text that is quoted from another source. can also add a cite attribute where we can add a link to the source.
+        </blockquote
+
+
+        <p>
+            <q>
+            Did you put you name..      -> for short inline quotes you can use <q> tag instead. This will add quotation at the end of sentence.
+            </q>
+            Dumbledore asked calmly.
+        </p> 
+
+        <p>
+        Press <kbd>Ctrl</kbd> + <kbd>c</kbd> to copy text.      -> The kbd tag used to define a keyboard input. this tag will simply add a monospace font to the text inside. 
+        </p>
+
+        <p>
+        The CSS
+        <code>background-color</coe>        -> To mark any kind of snippet on your page, you can use the <code> tag.
+        property defines...
+        </p>
+
+        <p>
+        <samp>Press enter to continue</samp>  ->The samp used to define sample of a computer program.
+        </p>
+
+        <b></b>     -> Bold text
+        <strong></strong>       -> greater importance(bold text)
+
+        <small></small>         -> less importance (little smaller)
+
+
+        #if you ever need to separate a part of your text so that we ca style it int the CSS, it is best to use the span tag.
+        <p>
+        Hello, my name is
+        <span>Mohit Tayal</span>
+        </p>
+
+        #subscript and superscript
+        <p>
+        Price: 300 <sup>99</sup> rs <br/>
+        I like drinking H<sub>2</sub>O
+        </p>        
+
+        #address -> to mark contact information
+        <address>
+        Writter By <a hrefe"">Mohit Tayal</a>
+        </adress>
+
+        #lists                      -> orderlists, unordered lists and description lists
+        <oL>
+        <li></li>
+        </ol>
+
+        <ul>
+        <li></li>
+        </ul>
+
+        <dl>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+        </d1>
+
+        <data value=""></data>      -> With the data tag you can procide a machine readable version of its own contents
+        <del></del>                 -> To mark worng text
+        <ins></ins>                 -> and for text than needs to be inserted instead.
+        <dfn></dfn>                 -> the dfn tag is used to mark a  definition that will later be defined.
+        <em></em>                   -> empathised tag
+        <hr/>                       -> horizontal line
+        <i></i>                     -> italicised
+        <mark></mark>               -> Highlight particular text
+        <pre><pre>                  -> used to preserve spaces or line breaks
+        <bdo dir="rtl"></bdo>       -> with this tag you can reverse the direction of the text inside.
+        <bdi></bdi>                 -> Isolated Text
+
+        <ruby>                      -> it defines ruby annotation which is a small extra text.
+            Example
+                <rp>(</rp>
+                <rt>345</rt>        ->rt tag defined the explanation of a character int he ruby annotation
+                <rp>)</rp>          ->rp tag is where paranthesis is provided to ruby text.
+        </ruby>
+
+        <s></s>                     -> with the s tag you can define innaccurate text. which will be decorated with a line goinf straight through it.
+        <u></u>                     -> underline
+        <var></var>                 ->to mark a variable
+        <wbr/>                      -> is you ever have a super long word that cant fit the whole screen, we can add a ebr tag to mark where the word should be broken.
+
+        ---------------------------------------------
+        <div></div>     ->division/section/container
+        
+        #Semantic HTML elements
+        <nav></nav>
+        <header></header>
+        <footer></footer>
+        <main></main>
+        <section></section>
+        <aside></asdie>
+        <articel></articel>
+
+        #HTML Canvas
+        <canvas></canvas>
+
+        <button></button>
+        <br/>
+        <details>
+            <summary></summary>
+            <p></p>
+        <details>
+        <meter value="" min="" max=""></meter>
+        <progress id="" value="" max=""></progress>
+        <noscript></noscript>
+        <svg width="" height=""></svg>
+        <template><template>            -> any html code that we want hidden is possible through template. the hidden content can later be made visible using js.
+        <time datetime="2008-02-14 20:00" />
+        <dialog open></dialog>
+
+        ------------------------------------------
+        #HTML form elements
+        <form action="" method=""></form>
+        <label>/<label>
+        <input type="" placeholder="" id="" />      ->input types could be : email, password, search, url, tel, number, checkbox, color, date, datetime-local, month, week, time, file, hidden, radio, range, reset, submit, image etc
+        <textarea rows="" cols="" placeholder=""></textarea>
+        <fieldset>
+        <legend></legend>
+        </fieldset>
+        <datalist><option value=""></option></datalist>
+        <select>
+        <optgroup><option value=""></option></optgroup>
+        </select>
+
+        -----------------------------------------------
+
+        #table tags
+        <table></table>
+        <caption></caption>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+            </tr>
+        </tfoot>
+
+        <colgroup>
+            <col span="" style="" />
+        </colgroup>
+
+        ---------------------------------------------
+        #media elements
+        <img src="" alt="" />
+
+        <picture>
+            <source media="" srcset="" />
+            <img src="" alt="" />
+        </picture>
+
+        <img src="" usemap="#image-map" />
+        <map name="image-map">
+            <area target="" alt="" title="" href="" coords="" shape="" />
+        </map>
+
+        <figure>
+            <img src="" />
+            <figcaption></figcaption>
+        </figure>
+
+        <audio controls>
+            <source src="" type="" />
+        </audio>
+
+        <video width="" height="" controls>
+            <source src="" type="" />
+            <track src="" kind="" srclang="" label="" />
+        </video>
+
+        <iframe width="" height="" src= "" /></iframe>
+        <object></object>
+        <embed />
+        
+        --------------------------------------------
+        <meta />
+        <link />
+        <style></style>
+        <script></script>
+        <base />
+
+
+
+
+<---------------------------------------inline and block elements--------------------------------------->
+        BLOCK ELEMENTS:
+            <p>
+            <div>
+            <article>
+            <address>
+            <aside>
+            <blockquote>
+            <ul><ol>
+            <table>
+            <tfoot>
+            <form>
+            <header>
+            <li>
+            <hr>
+
+        INLINE ELEMENTS:
+            <span>
+            <strong>
+            <a>
+            <b>
+            <bdo>
+            <select>
+            <small>
+            <var>
+            <abbr>
+            <button>
+            <textarea>
+  
+
+
+ 
+<-------------------------------------------------CSS---------------------------------------------------->
+    css = cascading style sheet
+           >it has collection of property and values.
+           >it use to change look and feel of webpage.
+           
+    
+     responsive webpage= html(tags)+css(property and values)
+    
+    
+     type of css
+      1. inline css
+      2. internal css
+      3. external css
+    
+    ---------------------------------------
+    
+        inline css syntax=>
+            <tagname style="property:value;property2:value;property3:value;></tagname>
+    
+        example:
+            <button style="color:red; background:blue;">log in</button>
+    
+        in inline css ?
+           > it is 1 to 1 - write css code 1 time and use in html only 1 time
+           > due to 1 to 1 code duplicate will happen
+           > if code will duplicate the file weight will increase
+           > heavy file take long time to load
+           > slow load of page lead to bad user experience
+           > code modification will be complex.
+           > google search will give low priority
+           > page performance will get poor
+    
+    ----------------------------------------
+    
+        -> internal css
+            ->it is 1 to many css code 1 time and use in html in many time
+    
+                syntax =
+                    selector{
+                        prperty1:value;
+                        prperty2:value;
+                        prperty3:value;
+                    }
+    
+    NOTE -  all html tags are called selector in css.
+            there are six type of selector in css
+    
+    
+    ----------------------------------------
+    
+        >tab selector - example1.html
+        example=>
+                    h1{
+                        text-align:center;
+                        color:blue;
+                        font-size:100px;
+                    }
+    ------------------------------------------
+    
+        >id selector - example2.html
+        example=>
+                    #block1{
+                        color:orange;
+                        font-size:40px;
+                        text-align:center;
+                        padding:50px;
+                        margin:50px;
+                        background:skyblue;
+                    }
+    
+                    #block2{
+                        color:red;
+                        height:100px;
+                        font-size:100px;
+                        text-align:center;
+                        padding:50px;
+                        margin:50px;
+                        background:green;
+                    }
+    
+    --------------------------------------------
+    
+        >class selector  example3.html
+        example=>
+                    .block2{
+                        padding:50px;
+                        margin:50px;
+                        color:purple;
+                        font-size:40px;
+                        float:left;
+                        background:black;
+                    }
+    ----------------------------------------------
+    
+        example->  
+                    h1,p,div{
+                        font-style:italic;
+                    }
+    ------------------------------------------------
+    
+        >parent child  selector  example5.html
+        example=>
+                    #xyz p{
+                        width:300px;
+                        height: 200px;
+                        margin:30px;
+                        font-size:30px;
+                        text-align: center;
+                        background: violet;
+                        float:left;
+                    }
+    ------------------------------------------------
+    
+        > attribute selector = it is not in use- it is complex. example6
+        example=>  
+                    input[type="text"]{
+                        display:block;
+                        height: 35px;
+                        margin:30px;
+                    }
+    --------------------------------------------------
+    
+        h1{}- tag selector
+        h1,p{}-group selector
+        #abc{}- id selector
+        .abc{}- class selector
+        #abc h1{}- parent and child selector
+        input[type="text"]{}= attribute selector
+    
+    -------------------------------------------------
+    
+    css properties and values:
+    
+        height -  3 ways to implement
+    
+            height:100px; - it is fixed
+            min-height:100px - the min height is fixed max up to content
+            height:auto; - fully based on contents.
+    
+            -> default height is auto
+    
+    ---------------------------------------------------
+    
+        width -  4 ways
+    
+            width:px;
+            width:%;
+            min-width:px;
+            max-width:px;
+    
+    ----------------------------------------------------
+    
+        background- 9 ways
+    
+            background: red;
+            background-color: red;
+            background-color: rgb(100, 125, 80);
+            background-color: rgba(100, 125, 80, 0.7);
+            background-image: linear-gradient(red, green, blue);
+            background-image: linear-gradient(to left, green, blue);
+            background-image: linear-gradient(to right, green, blue);
+            background-image: linear-gradient(to top, green, blue);
+            background-image: url('1.jpg');
+            background-size:  100% 100 %;
+    
+    
+    --------------------------------------------------------
+    
+        float- it use to convert block level tag to inline tag
+    
+            float:right- it print to right to left
+            float:left- it print to left to right
+    
+    --------------------------------------------------------
+    
+        margin- it apply space outside of a tag
+    
+            margin:auto- it print in center
+            margin:30px- it apply 30px gap from top,left,right,button
+            margin-top:30px
+            margin-bottom:30px
+            margin-left:30px
+            margin-right:30px
+    
+        padding- it apply a spce inside a tag.
+    
+            padding:30px - it apply 30px gap from all the side
+            padding-top:30px;- it apply 30px gap from top side
+            padding-left:30px;- it apply 30px gap from left side
+            padding-right:30px;- it apply 30px gap from right side
+            padding-button:30px;- it apply 30px gap from buttonside
+    
+        #margin apply a space outside where a padding apply a space inside.
+    
+    ------------------------------------------------------------
+    
+        Border in css
+            Type Of Border
+                Solid
+                Dotted
+                Dashed
+                Double
+                Inset
+                Outset
+                Ridge
+                Groove
+    
+            Direction Of Border
+                border: All side
+                border-top:
+                border-left:
+                border-right:
+                border-bottom:
+                border:none; -> no border
+    
+        example:
+            border: 10px solid red;  -> 10px border all side with color red.
+    
+    --------------------------------------------------------------
+    
+        Display in CSS
+    
+            display: inline        -> It convert from block level tag to inline, but height and width will not apply.
+            display: inline-block  -> It convert from block level tag to inline where height width will apply.
+            display: none          -> It hide the tag.
+            display: grid          ->
+            display: flex          ->
+            display: block         -> It convert from inline tag to block level tag.
+    
+
+
+
+<---------------------------------------CSS Positions and Box Model-------------------------------------->
+
+        Justify Content/items for horizontal left to right 
+        align content/items for vertical top to down
+        place content/items works for both vertical and horizontal.
+        
+        Box Model:
+
+                                            Margin
+                                            Border
+                                            Padding
+
+                    Margin Border Padding   Content    Padding Border Margin
+
+                                            Padding
+                                            Border
+                                            Margin
+
+
+
+         POSITIONS:
+         4 types -> Absolute, Relative, Fixed, Sticky, Static#default 
+
+
+
+<-----------------------------------------CSS Grid and Flexbox------------------------------------------->
+
+        We use grid to make layouts.
+        We can define columns and rows in grid.
+
+        display: grid;
+        grid-template-columns: 120px 100px;
+        grid-template-rows: 100px 100px 100px;
+
+        Grid Line and Grid Cell
+        Grid Track and Grid Area 
+
+        grid-row: 1/2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        grid-template-areas: "nav nav nav"
+                             "side article article"
+                             "footer footer footer";
+
+
+        grid-area: nav;
+        grid-area: side;
+        grid-area: article;
+        grid-area: footer;
+
+        FR Unit:
+        grid-template-columns: 1fr 1fr 1fr;   -> Divided into 3 fractions
+
+        use gap intead of padding in grid or flex
+        row-gap: 10px;
+        col-gap: 10px;
+
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+
+        ----------------------------------------------------
+
+        FlexBox:
+        Stands for flexible box
+        aims at providing an efficient and easy way to align items in a container.
+        it is direction agnostic.
+        the flex direction is horizontal by default.
+
+
+        container:
+            display: flex;
+            flex-direction: column/row/row-reverse/col-reverse;
+            justify-content: center/flex-start/flex-end/space-evenly/space-between/space-around;
+            align-items: center/etc.
+            flex-wrap: wrap/wrap-reverse;
+            flex-flow: column wrap;  -> flexDirection flexWrap    
+
+
+        item:
+            order: 3;
+            flex-grow: 3;   -> by default 1
+            flex-shrink: 2; -> by default 1 used  in small screen
+            align-self: center;
+
+
+<-----------------------------------CSS Id, Class Selectors and z-index---------------------------------->
+
+
+        ids and class are defined by # and . in css.
+
+        class can be called multiple times.
+        id is called only once. id should be unique.
+
+        z-index: auto/1/2/3/etc.;
+
+        basically z-index is used to zoom in zoom out the object. it won't work on static position.
+        --------------------------------------------
+
+        25/09/2024
+<-----------------------------------Pseudo Classes and Elements------------------------------------------>
+
+        A pseudo classes is used to define a sepcial state of an element.
+        example:    :visited, :link
+                    :hover, :active
+                    :firt-child
+                    :last-child
+                    :nth-child etc.
+
+        .btn:hover{
+            color: red;
+        }
+
+        ul li:first-child{
+        }
+
+        ul li:nth-child(4){
+        }
+
+
+        Pseudo elements is used to style specified parts of an element.
+        Example: ::first-letter, ::first-line, ::before, ::after
+
+        h2::first-letter{
+        }
+
+        ::selection{
+        }
+
+        p::first-line{
+        }
+
+
+<----------------------------------CSS combinators and specificity--------------------------------------->
+
+        Combinators =   explains the relationship between listed selectors.
+                          = descendant
+                        > = child
+                        ~ = general sibling
+                        + = adjacent sibling
+
+
+                        <div id="container">                                ->#container
+                            <p></p>                                         ->#container > p child
+                            <p></p>                                         ->#container > p
+                            <div>                                               
+                                <p></p>                                     ->#container grandchild           
+                            </div>
+                        </div>                                              ->
+
+                        <p></p>                                             ->#container + p
+                        <p></p>                                             ->#contaner ~ p
+
+        -------------------------------------------------
+
+        id is more  specific than class. Class is more  specific than element selector.
+
+        Combinators does not matter in casae of specificity. 
+
+        specifity could be changed by using !important. Specifity is like priority. we say this is more specific than this.
+
+
+<---------------------------------------HTML and CSS Form------------------------------------------------>
+
+        <div class="main>
+            <div class="register>
+                <h2>Register Here</h2>
+                <form id="register" method="post">
+                    <label>First Name</label>
+                    <br>
+                    <input type="text" name="fname" id="name" placeholder="Enter Your First Name">
+                    <br><br>
+                    <label>Last Name</label>
+                    <br>
+                    <input type="text" name="lname" id="name" placeholder="Enter Your Last Name">
+                    <br><br>
+                    <lable>Your age :</label>
+                    <br>
+                    <input type="number" name="age" id="name" placeholder="How old are you>"/>
+                    <br><br>
+                    <label>Email :</label>
+                    <br>
+                    <input type="email" name="email" id="name" placeholder="Enter your valid email"/>
+                    <br><br>
+                    <label>Gender</label>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender"id="male">
+                    &nbsp;
+                    <span id="male">Male</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" id="female"/>
+                    &nbsp;
+                    <span id="female">Female</span>
+                    <br><br>
+                    <label>Known Language : </lable>
+                    <br/>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="lang" id="hindi">
+                    &nbsp;
+                    <span id="hindi">Hindi</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="lang" id="urdu">
+                    &nbsp;
+                    <span id="urdu">Urdu</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="lang" id="eng">
+                    &nbsp;
+                    <span id="eng">English</span>
+                    <br><br>
+                    <input type="submit" value="submit" name="submit" id="submit"/>
+                </form>
+            </div>
+        </div>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: img;
+            background-size: 280%;
+            background-position: -400px 0px;
+        }
+
+        div.main{
+            width: 400px;
+            margin: 100px auto 0px 0px;
+        }
+
+        h2{
+            text-align: center;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        div.register{
+            background-color: rgba(0,0,0,0,.5);
+            width:100%;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        form#register{
+            margin: 40px;
+        }
+
+        label{
+            font-family: sans-serif;
+            font-size:18px;
+            font-style: italic;
+        }
+
+        input#name{
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        input#submit{
+            width: 200px;
+            padding: 7px;
+            font-size: 16px;
+            font-family: sans-serif;
+            font-weight: 600;
+            border: none;
+            border-radius: 3px;
+            background-color: rgba(250,100,0,0.8);
+            color: #fff;
+            curson: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        label,span,h2{
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+
+<---------------------------------Parallax, Carousels and Scrolls---------------------------------------->
+
+        I will perform this practically.
+
+        Translate
+        Transform
+        scroll-snap-type
+        scroll-behaviour
+        overflow-xyz
+        aspect-ratio
+        scroll-snap-align
+
+<---------------------------------CSS Animations and Hover Effect---------------------------------------->
+
+        Will do practically.
+
+
+
+<---------------------------------------------BootStrap-------------------------------------------------->
+        -->BOOTSTRAP is a library of CSS, it was intoduced by twitter in 2011
+        -->it is the first framework of html css javascript
+
+
+        library   - means 1 language
+        framework - means more than 1 language
+
+        ----> bootstrap is used to responsive webpage desgining.
+
+        the bootstrap divide all type of devices in 6 categories based on screen width
+           1. extra small devices - 1px to 576px window width
+           2. small devices - 576px to 768px window width
+           3.medium devices -768px to 992px window width
+           4.large devices -992px to 1200px window width
+           5.extra large devices -1200px to 1400px window width
+           6. double extra large devices - >1401pxwindow width
+
+         -----------------------------------------------
+
+          The bootstrap has given 12 classes for each category.
+          1. extra small devices
+              .col-1
+              .col-2
+              .col-3
+              .col-4
+              .col-5
+              .col-6
+              .col-7
+              .col-8
+              .col-9
+              .col-10
+              .col-11
+              .col-12
+          2. small devices
+              .col-sm-1
+              .col-sm-2
+              .col-sm-3
+              .col-sm-4
+              .col-sm-5
+              .col-sm-6
+              .col-sm-7
+              .col-sm-8
+              .col-sm-9
+              .col-sm-10
+              .col-sm-11
+              .col-sm-12
+
+          3. medium devices
+              .col-md-1
+              .col-md-2
+              .col-md-3
+              .col-md-4
+              .col-md-5
+              .col-md-6
+              .col-md-7
+              .col-md-8
+              .col-md-9
+              .col-md-10
+              .col-md-11
+              .col-md-12
+
+
+          4. large device
+              .col-lg-1
+              .col-lg-2
+              .col-lg-3
+              .col-lg-4
+              .col-lg-5
+              .col-lg-6
+              .col-lg-7
+              .col-lg-8
+              .col-lg-9
+              .col-lg-10
+              .col-lg-11
+              .col-lg-12
+
+          5. extra large devices
+              .col-xl-1
+              .col-xl-2
+              .col-xl-3
+              .col-xl-4
+              .col-xl-5
+              .col-xl-6
+              .col-xl-7
+              .col-xl-8
+              .col-xl-9
+              .col-xl-10
+              .col-xl-11
+              .col-xl-12
+
+          6.double extra large devices
+              .col-xxl-1
+              .col-xxl-2
+              .col-xxl-3
+              .col-xxl-4
+              .col-xxl-5
+              .col-xxl-6
+              .col-xxl-7
+              .col-xxl-8
+              .col-xxl-9
+              .col-xxl-10
+              .col-xxl-11
+              .col-xxl-12
+
+        *****Total 72 Classes*****
+
+        --------------------------------------------------
+           TO CREATE A WEBPAGE USING BOOTSTRAP FOLLOW THESE STEPS
+            1. LINK TO BOOTSTRRAP FILE IN HEAD SECTION.
+            2. USE BODY TAG .
+            3. INSIDE BODY OF HTML FOLLOW THESE classes:-
+                 .container -> it has margin from left and right
+                 .container-fluid -> it cover full width
+            4. INSIDE .CONTAINER OR CONTAINER-FLUID, FOLLOW THE classes
+               .row - height is auto, width is 100% of parent
+            5. INSIDE THE ROW FOLLOW THE COLUMNS-
+               ->each row can hold min 1 column and max 12 COLUMNS.
+
+        ----------------------------------------------------
+
+          html -> head(link to Bootstrap.css)
+               -> body->container->row->columns(72)->print the data
+
+
+        -----------------------------------------------------
+
+        Classes for margin ad padding (utility classes)
+            m - margin
+            p - padding
+            t - top
+            b - bottom
+            s - start (left)
+            e - end (right)
+
+            1 - 4px
+            2 - 8px
+            3 - 16px
+            4 - 24px
+            5 - 48px
+
+          Margin:
+            .m-1,.m-2,.m-3,.m-4,.m-5      -> Equal outer space from all the sides.
+            .mt-1,.mt-2,.mt-3,.mt-4,.mt-5 -> Outer Space from top.
+            .mb-1,.mb-2,.mb-3,.mb-4,.mb-5 -> Outer Space from bottom.
+            .ms-1,.ms-2,.ms-3,.ms-4,.ms-5 -> Outer Space from left.
+            .me-1,.me-2,.me-3,.me-4,.me-5 -> Outer Space from right.
+
+          Padding:
+            .p-1,.p-2,.p-3,.p-4,.p-5      -> Equal inner space from all the sides.
+            .pt-1,.pt-2,.pt-3,.pt-4,.pt-5 -> Inner Space from top.
+            .pb-1,.pb-2,.pb-3,.pb-4,.pb-5 -> Inner Space from bottom.
+            .ps-1,.ps-2,.ps-3,.ps-4,.ps-5 -> Inner Space from left.
+            .pe-1,.pe-2,.pe-3,.pe-4,.pe-5 -> Inner Space from right.
+
+        --------------------------------------------------------
+        Classes for text color
+            .text-danger         red
+            .text-success        green
+            .text-primary        blue
+            .text-info           skyblue
+            .text-warning        yellow
+            .text-secondary      grey
+            .text-white          white
+            .text-dark           black
+
+        ---------------------------------------------------------
+
+        Classes for background color
+            .bg-danger         red
+            .bg-success        green
+            .bg-primary        blue
+            .bg-info           skyblue
+            .bg-warning        yellow
+            .bg-secondary      grey
+            .bg-light          white
+            .bg-dark           black
+
+        ----------------------------------------------------------
+
+        Calsses for text allignment
+            .text-start    Left allignment
+            .text-end      Right allignment
+            .text-center   Center allignment
+
+        -----------------------------------------------------------
+
+        Classes for radius
+            .rounded
+            .rounded-circle
+
+        ------------------------------------------------------------
+
+        Classes for box-shadow
+            .shadow
+            .shadow-sm
+            .shadow-lg
+
+        ------------------------------------------------------------
+
+        Classes for img
+            .img-fluid - it control width of photo
+            .img-thumbnail
+
+        -------------------------------------------------------------
+
+        Classes for card
+            .card - Parent class
+            .card-header - Child
+            .card-body - Child
+            .card-footer - Child
+
+        --------------------------------------------------------------
+
+        Classes for left navigation
+            .list-group
+            .list-group-item
+            .active
+
+        ---------------------------------------------------------------
+
+        Classes for table
+            .table
+            .table-bordered
+            .table-striped
+            .table-sm
+
+        --------------------------------------------------------------
+
+        Classes for input element
+            .form-control - use in (text, password, textarea, email, number, date, file)
+            .form-select - use in select box
+
+        *****for different size*****
+
+            .form-control-sm
+            .form-control-lg
+
+        ---------------------------------------------------------------
+
+        Classes for button
+            .btn
+            .btn-danger         red
+            .btn-success        green
+            .btn-primary        blue
+            .btn-info           skyblue
+            .btn-warning        yellow
+            .btn-secondary      grey
+            .btn-light          white
+            .btn-dark           black
+
+
+
+<---------------------------------------------Git/GitHub------------------------------------------------->
+
+        Git
+        git -v
+        git config --global user.name ""
+        git config --global user.email ""
+        git init
+        git add .
+        git commit -m ""
+        git push
+        git status
+        git log
+        git log --oneline
+        git show <add>
+        git revert <add>
+        git reset --hard <add>
+        git remote -v
+        git remote add <>
+        git branch
+        git branch <branch name>
+        git checkout <branch name>
+        git checkout -b "Branch name"
+        git merge origin/<branch name>
+        git rebase branch name
+
+        #https://www.youtube.com/watch?v=RDxQEzXN8AU
