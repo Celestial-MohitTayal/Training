@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import formValidation from "../utils/formValidation";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -18,36 +17,59 @@ const Login = () => {
   };
 
   const handleButtonClk = () => {
-    const message = formValidation(email.current.value);
-    console.log(message);
-
-    //Authentication using localStorage
-    if (message == null) {
-      if (isSignIn) {
-        const users = JSON.parse(localStorage.getItem("users"));
-        const user = users?.find(
-          (user) => user.email === email.current.value && user.password === pass.current.value
-        );
-        console.log(users);
-        console.log(user);
-        if (user == undefined) {
-          setErrMsg("Incorrect Email or Password");
-        } else {
-          setErrMsg("");
-          navigate("/home");
-        }
-      } else {
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        const user = {
-          name: name.current.value,
-          email: email.current.value,
-          password: pass.current.value,
-        };
-        users.push(user);
-        localStorage.setItem("users", JSON.stringify(users));
+    const isEmailValid = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.current.value);
+    if (isSignIn) {
+      if (email.current.value == "" || !isEmailValid) {
+        setErrMsg("Invalid Email");
+        return;
       }
+      if (pass.current.value == "") {
+        setErrMsg("Invalid Password");
+        return;
+      }
+      const users = JSON.parse(localStorage.getItem("users"));
+      const user = users?.find(
+        (user) =>
+          user.email === email.current.value &&
+          user.password === pass.current.value
+      );
+      console.log(users);
+      console.log(user);
+      if (user == undefined) {
+        setErrMsg("Incorrect Email or Password");
+      } else {
+        setErrMsg(null);
+        navigate("/home");
+      }
+      email.current.value = "";
+      pass.current.value = "";
     } else {
-      setErrMsg(message);
+      if (name.current.value == "") {
+        setErrMsg("Invalid Name");
+        return;
+      }
+      if (email.current.value == "" || !isEmailValid) {
+        setErrMsg("Invalid Email");
+        return;
+      }
+      if (pass.current.value == "") {
+        setErrMsg("Invalid Password");
+        return;
+      }
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const user = {
+        name: name.current.value,
+        email: email.current.value,
+        password: pass.current.value,
+      };
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      setIsSignIn(!isSignIn);
+      setErrMsg(null);
+
+      email.current.value = "";
+      pass.current.value = "";
     }
   };
 

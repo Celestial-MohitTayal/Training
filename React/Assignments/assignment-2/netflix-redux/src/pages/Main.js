@@ -16,8 +16,6 @@ const Main = () => {
   ]);
   return (
     <div>
-      {/* <Login />
-      <Browse /> */}
       <RouterProvider router={appRouter} />
     </div>
   );
