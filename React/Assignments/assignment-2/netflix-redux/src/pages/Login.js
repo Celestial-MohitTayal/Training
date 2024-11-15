@@ -1,27 +1,54 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import formValidation from "../utils/validate";
+import formValidation from "../utils/formValidation";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMsg, setErrMsg] = useState(null);
+  const navigate = useNavigate();
 
+  const name = useRef(null);
   const email = useRef(null);
   const pass = useRef(null);
 
-  //Form Toggle SignIn to Up
   const toggleForm = () => {
     setIsSignIn(!isSignIn);
+    setErrMsg("");
   };
 
   const handleButtonClk = () => {
-    //Form Validation - used Ref instead of state for form values
-    const message = formValidation(
-      email.current.value,
-      pass.current.value
-    );
-    setErrMsg(message);
+    const message = formValidation(email.current.value);
+    console.log(message);
+
+    //Authentication using localStorage
+    if (message == null) {
+      if (isSignIn) {
+        const users = JSON.parse(localStorage.getItem("users"));
+        const user = users?.find(
+          (user) => user.email === email.current.value && user.password === pass.current.value
+        );
+        console.log(users);
+        console.log(user);
+        if (user == undefined) {
+          setErrMsg("Incorrect Email or Password");
+        } else {
+          setErrMsg("");
+          navigate("/home");
+        }
+      } else {
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const user = {
+          name: name.current.value,
+          email: email.current.value,
+          password: pass.current.value,
+        };
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+      }
+    } else {
+      setErrMsg(message);
+    }
   };
 
   return (
@@ -35,14 +62,15 @@ const Login = () => {
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute p-12  lg:w-3/12 sm:w-1/2 my-52 mx-auto right-0 left-0 bg-opacity-75
-        bg-black  text-white rounded-lg"
+        className="absolute p-12 lg:w-3/12 sm:w-1/2 my-52 mx-auto right-0 left-0 bg-opacity-75
+        bg-black text-white rounded-lg"
       >
         <h1 className="m-4 mb-8 font-bold text-3xl">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignIn && (
           <input
+            ref={name}
             type="text"
             placeholder="Full Name"
             className="p-4 my-2 mx-4 w-11/12 bg-transparent outline outline-slate-300 text-slate-300 rounded"
