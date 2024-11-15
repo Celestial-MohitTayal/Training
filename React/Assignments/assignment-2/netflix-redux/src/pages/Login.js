@@ -1,15 +1,17 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import SignInValidation from "../utils/SignInValidation";
+import SignUpValidation from "../utils/SignUpValidation";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMsg, setErrMsg] = useState(null);
   const navigate = useNavigate();
 
-  const name = useRef(null);
-  const email = useRef(null);
-  const pass = useRef(null);
+  const nameInput = useRef(null);
+  const emailInput = useRef(null);
+  const passInput = useRef(null);
 
   const toggleForm = () => {
     setIsSignIn(!isSignIn);
@@ -17,59 +19,41 @@ const Login = () => {
   };
 
   const handleButtonClk = () => {
-    const isEmailValid = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.current.value);
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    console.log(users);
+
     if (isSignIn) {
-      if (email.current.value == "" || !isEmailValid) {
-        setErrMsg("Invalid Email");
-        return;
-      }
-      if (pass.current.value == "") {
-        setErrMsg("Invalid Password");
-        return;
-      }
-      const users = JSON.parse(localStorage.getItem("users"));
-      const user = users?.find(
-        (user) =>
-          user.email === email.current.value &&
-          user.password === pass.current.value
+      const message = SignInValidation(
+        users,
+        emailInput.current.value,
+        passInput.current.value
       );
-      console.log(users);
-      console.log(user);
-      if (user == undefined) {
-        setErrMsg("Incorrect Email or Password");
-      } else {
-        setErrMsg(null);
+
+      if (message == "DataOk") {
         navigate("/home");
+        return;
       }
-      email.current.value = "";
-      pass.current.value = "";
+
+      setErrMsg(message);
+
+      emailInput.current.value = "";
+      passInput.current.value = "";
     } else {
-      if (name.current.value == "") {
-        setErrMsg("Invalid Name");
+      const message = SignUpValidation(
+        users,
+        nameInput.current.value,
+        emailInput.current.value,
+        passInput.current.value
+      );
+      if (message) {
+        setErrMsg(message);
         return;
       }
-      if (email.current.value == "" || !isEmailValid) {
-        setErrMsg("Invalid Email");
-        return;
-      }
-      if (pass.current.value == "") {
-        setErrMsg("Invalid Password");
-        return;
-      }
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const user = {
-        name: name.current.value,
-        email: email.current.value,
-        password: pass.current.value,
-      };
-      users.push(user);
-      localStorage.setItem("users", JSON.stringify(users));
 
       setIsSignIn(!isSignIn);
       setErrMsg(null);
-
-      email.current.value = "";
-      pass.current.value = "";
+      emailInput.current.value = "";
+      passInput.current.value = "";
     }
   };
 
@@ -92,20 +76,20 @@ const Login = () => {
         </h1>
         {!isSignIn && (
           <input
-            ref={name}
+            ref={nameInput}
             type="text"
             placeholder="Full Name"
             className="p-4 my-2 mx-4 w-11/12 bg-transparent outline outline-slate-300 text-slate-300 rounded"
           />
         )}
         <input
-          ref={email}
+          ref={emailInput}
           type="text"
           placeholder="Email or Mobile Number"
           className="p-4 my-2 mx-4 w-11/12 bg-transparent outline outline-slate-300 text-slate-300 rounded"
         />
         <input
-          ref={pass}
+          ref={passInput}
           type="password"
           placeholder="Password"
           className="p-4 my-2 mx-4 w-11/12 bg-transparent outline outline-slate-300 text-slate-300 rounded"
