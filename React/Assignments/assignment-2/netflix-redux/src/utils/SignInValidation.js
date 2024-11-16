@@ -13,7 +13,7 @@ const SignInValidation = (users, email, password) => {
   if (user == undefined) {
     return "Incorrect Email or Password";
   } else {
-    return "DataOk";
+    return [user.name, user.email, user.password];
   }
 };
 

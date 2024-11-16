@@ -3,8 +3,12 @@ import Header from "../components/Header";
 import SignInValidation from "../utils/SignInValidation";
 import SignUpValidation from "../utils/SignUpValidation";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/userSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMsg, setErrMsg] = useState(null);
   const navigate = useNavigate();
@@ -29,11 +33,15 @@ const Login = () => {
         passInput.current.value
       );
 
-      if (message == "DataOk") {
+      
+
+      if (Array.isArray(message)) {
         navigate("/home");
+        dispatch(addUser({name: message[0], email: message[1], pass: message[2] }))
+        console.log(message);
         return;
       }
-
+      // console.log(message);
       setErrMsg(message);
 
       emailInput.current.value = "";

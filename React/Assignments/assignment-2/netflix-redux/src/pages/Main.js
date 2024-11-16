@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Login from "./Login";
 import Home from "./Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -14,6 +14,9 @@ const Main = () => {
       element: <Home />,
     },
   ]);
+
+  useEffect(() => {}, []);
+
   return (
     <div>
       <RouterProvider router={appRouter} />
