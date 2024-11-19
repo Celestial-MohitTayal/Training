@@ -2,19 +2,25 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import bannerImage from "../assets/background_banner.jpg";
 import Header from "../components/Header";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const status = localStorage.getItem("status");
+  const userDetails = JSON.parse(localStorage.getItem("userDetails"));
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (status == "notLogin") {
+    if (userDetails == []) {
       navigate("/");
+    } else {
+      dispatch(addUser(userDetails));
     }
-    console.log(status);
+    console.log(userDetails);
   }, []);
 
   const fetchPopularVideos = async () => {

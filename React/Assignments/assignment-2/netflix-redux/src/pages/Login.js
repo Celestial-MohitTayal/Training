@@ -1,17 +1,14 @@
 import SignInValidation from "../utils/SignInValidation";
 import SignUpValidation from "../utils/SignUpValidation";
 import { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { addUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  localStorage.setItem("userDetails", []);
+
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMsg, setErrMsg] = useState(null);
-
-  localStorage.setItem("status", "notLogin");
 
   const nameInput = useRef(null);
   const emailInput = useRef(null);
@@ -33,10 +30,6 @@ const Login = () => {
       );
 
       if (Array.isArray(message)) {
-        dispatch(
-          addUser({ name: message[0], email: message[1], pass: message[2] })
-        );
-        localStorage.setItem("status", "Login");
         navigate("/home");
       }
       setErrMsg(message);
