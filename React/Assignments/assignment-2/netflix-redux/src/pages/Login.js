@@ -1,17 +1,17 @@
-import React, { useState, useRef } from "react";
-import Header from "../components/Header";
 import SignInValidation from "../utils/SignInValidation";
 import SignUpValidation from "../utils/SignUpValidation";
-import { useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMsg, setErrMsg] = useState(null);
-  const navigate = useNavigate();
+
+  localStorage.setItem("status", "notLogin");
 
   const nameInput = useRef(null);
   const emailInput = useRef(null);
@@ -24,7 +24,6 @@ const Login = () => {
 
   const handleButtonClk = () => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    console.log(users);
 
     if (isSignIn) {
       const message = SignInValidation(
@@ -33,19 +32,14 @@ const Login = () => {
         passInput.current.value
       );
 
-      
-
       if (Array.isArray(message)) {
+        dispatch(
+          addUser({ name: message[0], email: message[1], pass: message[2] })
+        );
+        localStorage.setItem("status", "Login");
         navigate("/home");
-        dispatch(addUser({name: message[0], email: message[1], pass: message[2] }))
-        console.log(message);
-        return;
       }
-      // console.log(message);
       setErrMsg(message);
-
-      emailInput.current.value = "";
-      passInput.current.value = "";
     } else {
       const message = SignUpValidation(
         users,
@@ -53,27 +47,37 @@ const Login = () => {
         emailInput.current.value,
         passInput.current.value
       );
+
       if (message) {
         setErrMsg(message);
         return;
       }
-
       setIsSignIn(!isSignIn);
       setErrMsg(null);
-      emailInput.current.value = "";
-      passInput.current.value = "";
     }
+
+    emailInput.current.value = "";
+    passInput.current.value = "";
   };
 
   return (
-    <div>
-      <Header />
+    <>
+      <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10">
+        <img
+          className="w-44"
+          src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+          alt="logo"
+        />
+      </div>
+
       <div className="absolute">
         <img
+          className="h-screen"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_large.jpg"
           alt="bgImage"
         />
       </div>
+
       <form
         onSubmit={(e) => e.preventDefault()}
         className="absolute p-12 lg:w-3/12 sm:w-1/2 my-52 mx-auto right-0 left-0 bg-opacity-75
@@ -121,7 +125,7 @@ const Login = () => {
           </p>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 
