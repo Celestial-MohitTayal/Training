@@ -18,9 +18,8 @@ const SignInValidation = (users, email, password) => {
   if (user == undefined) {
     return "Incorrect Email or Password";
   } else {
-    console.log(user);
     localStorage.setItem('userDetails', JSON.stringify(user));
-    return [user.name, user.email, user.password];
+    return 'acceptLogin';
   }
 };
 

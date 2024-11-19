@@ -4,8 +4,6 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  localStorage.setItem("userDetails", []);
-
   const navigate = useNavigate();
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMsg, setErrMsg] = useState(null);
@@ -29,7 +27,7 @@ const Login = () => {
         passInput.current.value
       );
 
-      if (Array.isArray(message)) {
+      if (message == 'acceptLogin') {
         navigate("/home");
       }
       setErrMsg(message);

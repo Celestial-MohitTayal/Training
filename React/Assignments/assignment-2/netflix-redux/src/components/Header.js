@@ -24,7 +24,7 @@ const Header = () => {
           <button
             onClick={() => {
               dispatch(removeUser());
-              localStorage.setItem("status", 'notLogin')
+              localStorage.removeItem("userDetails")
               navigate("/");
             }}
           >
