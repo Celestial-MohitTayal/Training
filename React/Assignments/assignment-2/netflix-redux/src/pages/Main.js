@@ -15,8 +15,6 @@ const Main = () => {
     },
   ]);
 
-  useEffect(() => {}, []);
-
   return (
     <div>
       <RouterProvider router={appRouter} />

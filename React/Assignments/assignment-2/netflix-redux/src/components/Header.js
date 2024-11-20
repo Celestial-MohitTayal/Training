@@ -8,7 +8,6 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userDetails = JSON.parse(localStorage.getItem("userDetails")) || null;
-
   useEffect(() => {
     if (!userDetails) {
       navigate("/");
