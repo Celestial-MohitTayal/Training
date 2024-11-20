@@ -1,15 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit"
-import userReducer from './userSlice'
-import reducer from "./userSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from "./userSlice";
+import movieReducer from "./movieSlice";
 
-const store = configureStore(
-    {
-        reducer: {
-            user: userReducer,
-        },
-    }
-)
+const store = configureStore({
+  reducer: {
+    user: userReducer,
+    movies: movieReducer,
+  },
+});
 
-console.log(reducer);
-
-export default store
+export default store;
