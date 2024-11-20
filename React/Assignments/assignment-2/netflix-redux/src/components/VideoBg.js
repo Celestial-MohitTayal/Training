@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
-import { API_OPTIONS } from "../utils/constatns";
-import { useDispatch, useSelector } from "react-redux";
-import { addTrailerVideo } from "../redux/movieSlice";
 import store from "../redux/store";
+import { useSelector } from "react-redux";
 import useMovieTrailer from "../hooks/useMovieTrailer";
 
 const VideoBg = ({ movieId }) => {
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
   useMovieTrailer(movieId);
   return (
-    <div className="w-screen ">
+    <div className="scale-150">
       <iframe
         className="w-screen aspect-video"
         src={

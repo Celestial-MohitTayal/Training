@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import store from "../redux/store";
-import VideoTitle from "./VideoTitle";
 import VideoBg from "./VideoBg";
+import VideoTitle from "./VideoTitle";
 
 const Banner = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
