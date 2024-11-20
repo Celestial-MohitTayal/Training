@@ -6,7 +6,7 @@ const MovieContainer = () => {
   return (
     movies.nowPlayingMovies && (
       <div className="bg-black">
-        <div className="lg:-mt-36 md:-mt-20 -mt-12  relative z-10">
+        <div className="xl:-mt-60 md:-mt-24 -mt-12  relative z-10">
           <MovieRow title={"Now Playing"} movies={movies.nowPlayingMovies} />
           <MovieRow title={"Top Rated"} movies={movies.topRatedMovies} />
         </div>
