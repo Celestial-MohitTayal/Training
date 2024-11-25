@@ -4,6 +4,7 @@ import { addUpcomingMovies } from "../redux/movieSlice";
 import { useDispatch } from "react-redux";
 
 const useUpcomingMovies = () => {
+  // console.log("Movie Trailer");
   const dispatch = useDispatch();
 
   const getUpcomingMovies = async () => {

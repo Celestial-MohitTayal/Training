@@ -4,6 +4,7 @@ import { addTopRatedMovies } from "../redux/movieSlice";
 import { useDispatch } from "react-redux";
 
 const useTopRatedMovies = () => {
+  // console.log("Movie Trailer");
   const dispatch = useDispatch();
 
   const getTopRatedMovies = async () => {
