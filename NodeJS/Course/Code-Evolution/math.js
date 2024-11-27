@@ -1,0 +1,20 @@
+// const add = (a, b) => {
+//     return a + b;
+// };
+// module.exports = add;
+//--------------------------------------------------
+//Another way
+
+// module.exports = (a, b) => {
+//     return a + b;
+// };
+//--------------------------------------------------
+
+
+const add = (a, b) => {
+    return a + b;
+};
+const subtract = (a, b) => {
+    return a - b;
+};
+module.exports = {add, subtract, };
