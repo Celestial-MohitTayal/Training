@@ -19,13 +19,20 @@ require("./superman")
 // console.log(newSuperHero.getName());  //output: Superman instead of batman -> that is where concept of module caching come into picture.
 //it is going to load same object as it is called before too, Caching helps in performance.
 //---------------------------------------------------------------------
-
 // to get over above scenario
-const superHero1 = require('./super-hero');
-const batman = new superHero1('Batman');
-console.log(batman.getName());
-batman.setName("Bruce Wayn");
-console.log(batman.getName());
+// const superHero1 = require('./super-hero');
+// const batman = new superHero1('Batman');
+// console.log(batman.getName());
+// batman.setName("Bruce Wayn");
+// console.log(batman.getName());
 
-const superman = new superHero1("Superman");
-console.log(superman.getName());
+// const superman = new superHero1("Superman");
+// console.log(superman.getName());
+//-----------------------------------------------------------------------
+const math = require('./math')
+
+const {add, subtract} = math // destructuring so that we do not hve to use math.add math.subtract
+
+console.log(add(2, 3));
+console.log(subtract(2, 3));
+
