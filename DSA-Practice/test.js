@@ -1,17 +1,17 @@
-// function countDuplicates() {
-//     const countMap = {};
-//     arr.forEach(num => {
-//         countMap[num] = (countMap[num] || 0) + 1;
-//     });
+function countDuplicates() {
+  const countMap = {};
+  arr.forEach((num) => {
+    countMap[num] = (countMap[num] || 0) + 1;
+  });
 
-//     for (const num in countMap) {
-//         if (countMap[num] > 1) {
-//             console.log(`${num} repeats ${countMap[num]} times`);
-//         }
-//     }
-// }
-// let arr = [1,2,3,4,5,6,7,1,2,3,4,5,6]
-// countDuplicates(arr)
+  for (const num in countMap) {
+    if (countMap[num] > 1) {
+      console.log(`${num} repeats ${countMap[num]} times`);
+    }
+  }
+}
+let arr = [1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6];
+countDuplicates(arr);
 
 //---------------------------------------------------------------------
 //checking the knowledge of lexical scope
@@ -28,6 +28,8 @@
 // fun();
 
 //------------------
+//checking the knowledge of lexical scope and closure
+
 function outerfn() {
   let flag = true;
   return function innerFn() {
@@ -42,5 +44,5 @@ const a = outerfn();
 
 a();
 a();
-outerfn();
-outerfn();
+a();
+a();
