@@ -82,6 +82,16 @@ const updateUser = (keyword = '') => {
 let addNewButton = document.getElementById('addNewUser');
 let formTemplate = document.getElementById('form');
 let container = document.getElementById('container');
+let closeModel = document.getElementById('closeModel');
+
+
+
+closeModel.addEventListener('click', e => {
+  //pop-up effect
+  container.classList.remove('blur-lg');
+  formTemplate.classList.add('hidden');
+  e.preventDefault();
+});
 
 addNewButton.addEventListener('click', e => {
   //pop-up effect

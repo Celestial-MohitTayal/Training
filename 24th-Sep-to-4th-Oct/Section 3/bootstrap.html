@@ -24,10 +24,16 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-3">
       <div class="container">
         <a href="#" class="navbar-brand">
-          <img src="Images/logo.png" class="rounded" width="200px" height="54px"/>
+          <img
+            src="Images/logo.png"
+            class="rounded"
+            width="200px"
+            height="54px"
+            alt="Logo"
+          />
         </a>
         <button
           class="navbar-toggler"
@@ -39,26 +45,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link active blockquote" aria-current="page"
-                >Home</a
-              >
+              <a href="#" class="nav-link active" aria-current="page">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link blockquote">Product</a>
+              <a href="#" class="nav-link">Product</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link blockquote">About Us</a>
+              <a href="#" class="nav-link">About Us</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link blockquote">Contact</a>
+              <a href="#" class="nav-link">Contact</a>
             </li>
-            <li class="nav-item">
-                <input type="text" placeholder="Search...." class="form-control"/>
-            </li>
-            <li class="nav-item">
-                <i class="material-icons text-light blockquote">search</i>
+            <li class="nav-item d-flex align-items-center mx-5">
+              <input
+                type="text"
+                placeholder="Search...."
+                class="form-control form-control-sm border-0 rounded-pill py-2 px-3"
+                style="max-width: 200px"
+              />
+              <i class="material-icons text-light mx-2">search</i>
             </li>
           </ul>
         </div>
@@ -195,38 +202,44 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-lg-4 row-cols-2 gy-3 mt-5 mb-5">
-            <div class="col text-center">
-                <i class="material-icons">public</i>
-                <br />
-                <label class="blockquote">Worldwide Shipping</label>
-                <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
-            </div>
-            <div class="col text-center">
-                <i class="material-icons">high_quality</i>
-                <br />
-                <label class="blockquote">High Quality</label>
-                <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
-            </div>
-            <div class="col text-center">
-                <i class="material-icons">credit_card</i>
-                <br />
-                <label class="blockquote">Best Offers</label>
-                <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
-            </div>
-            <div class="col text-center">
-                <i class="material-icons">payments</i>
-                <br />
-                <label class="blockquote">Secure payments</label>
-                <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
-            </div>
+      <div class="row row-cols-lg-4 row-cols-2 gy-3 mt-5 mb-5">
+        <div class="col text-center">
+          <i class="material-icons">public</i>
+          <br />
+          <label class="blockquote">Worldwide Shipping</label>
+          <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
         </div>
+        <div class="col text-center">
+          <i class="material-icons">high_quality</i>
+          <br />
+          <label class="blockquote">High Quality</label>
+          <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
+        </div>
+        <div class="col text-center">
+          <i class="material-icons">credit_card</i>
+          <br />
+          <label class="blockquote">Best Offers</label>
+          <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
+        </div>
+        <div class="col text-center">
+          <i class="material-icons">payments</i>
+          <br />
+          <label class="blockquote">Secure payments</label>
+          <p>Lorem ipsum dolor sit amet consectetur dipisicing elit.</p>
+        </div>
+      </div>
     </div>
 
     <section class="bg-secondary">
-        <div class="row row-cols-lg-4 row-cols-1 gy-4 mt-5 p-5">
+      <div class="row row-cols-lg-4 row-cols-1 gy-4 mt-5 p-5">
         <div class="col text-light">
-          <img class="logo" src="Images/logo.png" alt="logo" width="200px" height="50px"/>
+          <img
+            class="logo"
+            src="Images/logo.png"
+            alt="logo"
+            width="200px"
+            height="50px"
+          />
           <p>The Best Look Anytime, Anywhere</p>
         </div>
         <div class="col text-light">
@@ -245,11 +258,15 @@
         </div>
         <div class="col text-light">
           <h3>Subscribe</h3>
-          <input type="email" placeholder="Enter Email...." class="form-control w-50"/>
+          <input
+            type="email"
+            placeholder="Enter Email...."
+            class="form-control w-50"
+          />
           <br />
           <button class="btn btn-light text-dark">Submit</button>
         </div>
-    </div>
-      </section>
+      </div>
+    </section>
   </body>
 </html>
